@@ -1,0 +1,2080 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>社畜英語訓練手冊 / Office English Handbook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f1e8d3;
+  --paper-2: #e9dfc6;
+  --paper-3: #ddd1b3;
+  --ink: #1a1813;
+  --ink-2: #3a3127;
+  --ink-3: #6b5d4a;
+  --faded: #9a8b73;
+  --rule: #1a1813;
+  --stamp: #a8332f;
+  --stamp-2: #8a2723;
+  --green: #2d5a3a;
+  --highlight: #d9c47a;
+  --serif: "IBM Plex Serif", "Noto Serif TC", Georgia, serif;
+  --sans: "IBM Plex Sans", "Noto Sans TC", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: #d9ceb1;
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: "";
+  position: fixed; inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0,0,0,0.04) 0, transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(0,0,0,0.05) 0, transparent 40%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.page {
+  position: relative;
+  max-width: 880px;
+  margin: 32px auto;
+  background: var(--paper);
+  background-image:
+    repeating-linear-gradient(180deg, transparent 0, transparent 31px, rgba(26,24,19,0.04) 31px, rgba(26,24,19,0.04) 32px),
+    radial-gradient(ellipse at top left, rgba(255,255,255,0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom right, rgba(0,0,0,0.06) 0%, transparent 60%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.5) inset,
+    0 0 0 1px rgba(26,24,19,0.08),
+    0 30px 60px -20px rgba(0,0,0,0.35),
+    0 12px 24px -8px rgba(0,0,0,0.18);
+  padding: 48px 56px 60px;
+  z-index: 2;
+}
+
+.page::after {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.45;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+/* ============ DOCUMENT HEADER ============ */
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 14px;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 3;
+}
+
+.masthead .super {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 6px;
+}
+
+.masthead h1 {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.masthead h1 .en {
+  display: block;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 8px;
+  color: var(--ink-2);
+  letter-spacing: 0.02em;
+}
+
+.meta {
+  text-align: right;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  color: var(--ink-2);
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.meta strong { color: var(--ink); font-weight: 600; }
+
+.subhead {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-top: 6px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--ink-3);
+  padding-bottom: 6px;
+}
+
+/* ============ TAB NAV ============ */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--ink-3);
+  position: relative;
+  z-index: 3;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: none;
+  border: none;
+  padding: 12px 18px 14px;
+  cursor: pointer;
+  font-family: var(--serif);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink-3);
+  letter-spacing: 0.02em;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+  position: relative;
+}
+
+.tab .num {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  margin-right: 8px;
+  color: var(--faded);
+  letter-spacing: 0.1em;
+}
+
+.tab .badge {
+  display: inline-block;
+  margin-left: 6px;
+  background: var(--stamp);
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 8px;
+  font-weight: 600;
+  vertical-align: 2px;
+  letter-spacing: 0;
+}
+
+.tab .badge.empty { background: var(--ink-3); }
+
+.tab:hover { color: var(--ink); }
+.tab.active { color: var(--ink); border-bottom-color: var(--ink); }
+.tab.active .num { color: var(--stamp); }
+
+/* ============ PANELS ============ */
+.panel { display: none; animation: fadeUp 0.4s ease; position: relative; z-index: 3; }
+.panel.active { display: block; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============ DAILY PHRASE ============ */
+.daily-card { position: relative; padding: 36px 8px 16px; }
+
+.daily-stamp {
+  position: absolute;
+  top: -8px; right: -4px;
+  border: 2.5px solid var(--stamp);
+  color: var(--stamp);
+  padding: 6px 14px 7px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transform: rotate(8deg);
+  border-radius: 2px;
+  opacity: 0.85;
+  background: rgba(168, 51, 47, 0.04);
+}
+
+.daily-stamp::before {
+  content: "";
+  position: absolute; inset: 2px;
+  border: 1px solid var(--stamp);
+  opacity: 0.4;
+  border-radius: 1px;
+}
+
+.daily-phrase-en {
+  font-family: var(--serif);
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.daily-phrase-en::before { content: "\201C"; color: var(--stamp); margin-right: 4px; }
+.daily-phrase-en::after { content: "\201D"; color: var(--stamp); margin-left: 4px; }
+
+.daily-phrase-zh {
+  font-family: var(--serif);
+  font-size: 19px;
+  color: var(--ink-2);
+  margin-bottom: 28px;
+  letter-spacing: 0.01em;
+}
+
+.daily-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px dashed var(--ink-3);
+}
+
+.daily-block h3 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stamp);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink-3);
+}
+
+.daily-block .body {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink);
+  line-height: 1.65;
+}
+
+.daily-block.subtext .body { font-style: italic; color: var(--ink-2); }
+
+.dialogue { font-family: var(--serif); font-size: 14.5px; line-height: 1.8; }
+
+.dialogue .speaker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--faded);
+  display: inline-block;
+  width: 32px;
+  vertical-align: top;
+}
+
+.dialogue p { margin-bottom: 8px; }
+
+.daily-controls {
+  margin-top: 36px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  padding: 9px 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border-radius: 1px;
+}
+
+.btn:hover:not(:disabled) { background: var(--ink); color: var(--paper); }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.btn.primary { background: var(--ink); color: var(--paper); }
+.btn.primary:hover:not(:disabled) { background: var(--stamp); border-color: var(--stamp); }
+
+.fav-btn {
+  background: none;
+  border: 1px solid var(--ink-3);
+  padding: 9px 14px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  color: var(--ink-3);
+  transition: all 0.15s;
+  border-radius: 1px;
+}
+
+.fav-btn:hover { border-color: var(--stamp); color: var(--stamp); }
+.fav-btn.active {
+  border-color: var(--stamp);
+  background: var(--stamp);
+  color: var(--paper);
+}
+
+.counter-text {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--faded);
+  margin-left: auto;
+  letter-spacing: 0.1em;
+}
+
+/* ============ DECODER ============ */
+.decoder-intro, .drill-intro, .fav-intro {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-2);
+  margin-bottom: 24px;
+  padding-left: 16px;
+  border-left: 3px solid var(--stamp);
+}
+
+.decoder-search {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--ink);
+  padding: 10px 0;
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 24px;
+  outline: none;
+}
+
+.decoder-search::placeholder {
+  color: var(--faded);
+  font-style: italic;
+}
+
+.decoder-list { list-style: none; }
+
+.decoder-item {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--paper-3);
+}
+
+.decoder-item:hover { background: rgba(168, 51, 47, 0.04); }
+
+.decoder-said {
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ink);
+  font-style: italic;
+}
+
+.decoder-said .said-zh {
+  display: block;
+  font-style: normal;
+  font-size: 12.5px;
+  color: var(--ink-3);
+  margin-top: 4px;
+  font-weight: 400;
+}
+
+.decoder-arrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--stamp);
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+
+.decoder-meant {
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink-2);
+  line-height: 1.5;
+}
+
+.no-results {
+  padding: 40px 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  color: var(--faded);
+}
+
+/* ============ DRILL ============ */
+.drill-scorebar {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 14px;
+  padding: 10px 14px;
+  background: var(--paper-2);
+  border: 1px solid var(--paper-3);
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.drill-scorebar .score-block { display: flex; gap: 18px; }
+
+.drill-scorebar strong { color: var(--ink); font-size: 13px; }
+.drill-scorebar .correct-num { color: var(--green); }
+.drill-scorebar .wrong-num { color: var(--stamp); }
+.drill-scorebar .reset-score {
+  background: none;
+  border: 1px solid var(--ink-3);
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: var(--ink-3);
+  text-transform: uppercase;
+}
+.drill-scorebar .reset-score:hover { color: var(--stamp); border-color: var(--stamp); }
+
+.drill-counter {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 10px;
+}
+
+.drill-counter strong { color: var(--stamp); }
+
+.drill-situation {
+  background: var(--paper-2);
+  border: 1px solid var(--ink-3);
+  border-left: 4px solid var(--ink);
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.drill-situation::before {
+  content: "情境 / SCENARIO";
+  position: absolute;
+  top: -8px; left: 18px;
+  background: var(--paper);
+  padding: 0 8px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--ink-3);
+}
+
+.drill-situation p {
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--ink);
+}
+
+.drill-options { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+
+.drill-option {
+  background: var(--paper);
+  border: 1px solid var(--ink-3);
+  padding: 14px 18px;
+  font-family: var(--serif);
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+  color: var(--ink);
+  transition: all 0.15s;
+  display: flex;
+  gap: 14px;
+  line-height: 1.5;
+  border-radius: 1px;
+}
+
+.drill-option .letter {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--faded);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.drill-option:hover:not(:disabled) {
+  border-color: var(--ink);
+  background: var(--paper-2);
+}
+
+.drill-option:disabled { cursor: default; }
+
+.drill-option.correct {
+  border-color: var(--green);
+  background: rgba(45, 90, 58, 0.08);
+}
+
+.drill-option.correct .letter { color: var(--green); }
+
+.drill-option.wrong {
+  border-color: var(--stamp);
+  background: rgba(168, 51, 47, 0.08);
+  color: var(--ink-2);
+  text-decoration: line-through;
+  text-decoration-color: var(--stamp);
+}
+
+.drill-option.faded { opacity: 0.5; }
+
+.drill-explain {
+  display: none;
+  background: var(--paper-2);
+  border-top: 2px solid var(--ink);
+  padding: 18px 22px;
+  font-family: var(--serif);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-2);
+  margin-bottom: 20px;
+}
+
+.drill-explain.show { display: block; animation: fadeUp 0.3s ease; }
+
+.drill-explain h4 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stamp);
+  margin-bottom: 10px;
+}
+
+.drill-explain .gloss {
+  font-style: italic;
+  color: var(--ink);
+  font-size: 13.5px;
+}
+
+.drill-controls { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ============ FAVORITES PANEL ============ */
+.fav-empty {
+  padding: 60px 20px;
+  text-align: center;
+  font-family: var(--serif);
+  color: var(--ink-3);
+}
+
+.fav-empty p:first-child {
+  font-style: italic;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--ink-2);
+}
+
+.fav-empty p:last-child {
+  font-size: 13.5px;
+  color: var(--faded);
+}
+
+.fav-card {
+  border: 1px solid var(--paper-3);
+  padding: 18px 22px;
+  margin-bottom: 14px;
+  background: var(--paper);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+}
+
+.fav-card .fav-en {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.fav-card .fav-zh {
+  font-family: var(--serif);
+  font-size: 13.5px;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+}
+
+.fav-card .fav-sub {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--ink-2);
+  border-left: 2px solid var(--stamp);
+  padding-left: 10px;
+}
+
+.fav-card .fav-remove {
+  background: none;
+  border: 1px solid var(--ink-3);
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  padding: 6px 10px;
+  cursor: pointer;
+  color: var(--ink-3);
+  text-transform: uppercase;
+  white-space: nowrap;
+  border-radius: 1px;
+}
+
+.fav-card .fav-remove:hover {
+  color: var(--stamp);
+  border-color: var(--stamp);
+}
+
+/* ============ FOOTER ============ */
+.doc-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink-3);
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  position: relative;
+  z-index: 3;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.doc-footer .disclaimer {
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.05em;
+  font-family: var(--serif);
+  color: var(--faded);
+  font-size: 11px;
+}
+
+/* ============ SPEECH CONTROLS ============ */
+.speak-btn {
+  background: var(--paper-2);
+  border: 1px solid var(--ink-3);
+  color: var(--ink);
+  width: 32px; height: 32px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  transition: all 0.15s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.speak-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+.speak-btn.playing {
+  background: var(--stamp);
+  color: var(--paper);
+  border-color: var(--stamp);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(168, 51, 47, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(168, 51, 47, 0); }
+}
+
+.speak-btn svg { width: 14px; height: 14px; }
+
+.speak-btn.tiny {
+  width: 26px; height: 26px;
+}
+.speak-btn.tiny svg { width: 11px; height: 11px; }
+
+.phrase-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.phrase-row .speak-btn {
+  margin-top: 14px;
+}
+
+.phrase-row .daily-phrase-en {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+/* speech speed toggle bar */
+.speech-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-top: 18px;
+  padding: 10px 14px;
+  background: var(--paper-2);
+  border: 1px dashed var(--paper-3);
+  flex-wrap: wrap;
+}
+
+.speech-bar .label { color: var(--faded); }
+
+.speed-toggle {
+  display: inline-flex;
+  border: 1px solid var(--ink-3);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.speed-toggle button {
+  background: var(--paper);
+  border: none;
+  color: var(--ink-3);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  padding: 5px 11px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-right: 1px solid var(--ink-3);
+}
+
+.speed-toggle button:last-child { border-right: none; }
+
+.speed-toggle button.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.speech-bar .play-dialog-btn {
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  padding: 6px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 1px;
+  margin-left: auto;
+}
+
+.speech-bar .play-dialog-btn:hover { background: var(--stamp); }
+
+.speech-bar .play-dialog-btn.playing {
+  background: var(--stamp);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.speech-warning {
+  display: none;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--stamp);
+  margin-top: 10px;
+}
+.speech-warning.show { display: block; }
+
+/* dialog speak inline buttons */
+.dialogue p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dialogue p .line-text { flex: 1; }
+
+.dialogue p.speaking {
+  background: rgba(168, 51, 47, 0.06);
+  margin-left: -8px;
+  margin-right: -8px;
+  padding: 4px 8px;
+  border-radius: 2px;
+  transition: background 0.2s;
+}
+
+/* drill option speak button */
+.drill-option .opt-text { flex: 1; }
+.drill-option .speak-btn {
+  margin-left: auto;
+  align-self: center;
+}
+
+/* fav card speak */
+.fav-card .fav-en-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.fav-card .fav-en-row .fav-en {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+/* decoder inline speak */
+.decoder-said .said-en-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* drill shadow practice block */
+.drill-shadow {
+  display: none;
+  background: rgba(45, 90, 58, 0.06);
+  border: 1px dashed var(--green);
+  padding: 14px 18px;
+  margin-bottom: 16px;
+  font-family: var(--serif);
+  font-size: 14.5px;
+  color: var(--ink-2);
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.drill-shadow.show { display: flex; animation: fadeUp 0.3s ease; }
+
+.drill-shadow .shadow-label {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green);
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.drill-shadow .shadow-line {
+  flex: 1;
+  font-style: italic;
+  min-width: 200px;
+}
+
+.drill-shadow .speak-btn {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.drill-shadow .speak-btn:hover {
+  background: var(--green);
+  color: var(--paper);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 720px) {
+  .page { margin: 12px; padding: 28px 22px 36px; }
+  .masthead h1 { font-size: 26px; }
+  .masthead h1 .en { font-size: 14px; }
+  .meta { font-size: 9px; }
+  .daily-phrase-en { font-size: 26px; }
+  .daily-phrase-zh { font-size: 16px; }
+  .daily-grid { grid-template-columns: 1fr; gap: 20px; }
+  .decoder-item { grid-template-columns: 1fr; gap: 6px; }
+  .decoder-arrow { padding-top: 0; }
+  .tab { padding: 10px 12px; font-size: 13px; }
+  .tab .num { display: none; }
+  .doc-header { flex-direction: column; gap: 10px; }
+  .meta { text-align: left; }
+  .fav-card { grid-template-columns: 1fr; }
+  .fav-card .fav-remove { justify-self: start; }
+}
+</style>
+</head>
+<body>
+
+<main class="page">
+
+  <header class="doc-header">
+    <div class="masthead">
+      <div class="super">FOR INTERNAL CIRCULATION ONLY · 內部流通文件</div>
+      <h1>
+        社畜英語訓練手冊
+        <span class="en">The Office English Survival Handbook</span>
+      </h1>
+    </div>
+    <div class="meta">
+      <div>FILE №&nbsp;<strong id="fileNumber">—</strong></div>
+      <div>DATE&nbsp;<strong id="todayDate">—</strong></div>
+      <div>EDITION&nbsp;<strong>VOL. II</strong></div>
+    </div>
+  </header>
+
+  <div class="subhead">
+    <span>第 047 號訓練教材</span>
+    <span>每日一頁 · 不必精通 · 只求能裝懂</span>
+  </div>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab active" data-tab="daily" role="tab">
+      <span class="num">01</span>每日金句
+    </button>
+    <button class="tab" data-tab="decoder" role="tab">
+      <span class="num">02</span>黑話翻譯機
+    </button>
+    <button class="tab" data-tab="drill" role="tab">
+      <span class="num">03</span>情境快問
+    </button>
+    <button class="tab" data-tab="fav" role="tab">
+      <span class="num">04</span>我的收藏<span class="badge empty" id="favBadge">0</span>
+    </button>
+  </nav>
+
+  <!-- PANEL 1: DAILY PHRASE -->
+  <section class="panel active" id="panel-daily">
+    <div class="daily-card">
+      <div class="daily-stamp">本日訓練 · DAILY DRILL</div>
+      <div class="phrase-row">
+        <div class="daily-phrase-en" id="phraseEn">—</div>
+        <button class="speak-btn" id="btnSpeakPhrase" aria-label="播放發音" title="播放發音">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+        </button>
+      </div>
+      <div class="daily-phrase-zh" id="phraseZh">—</div>
+
+      <div class="speech-bar">
+        <span class="label">發音速度</span>
+        <div class="speed-toggle">
+          <button data-speed="0.7" id="speedSlow">慢速</button>
+          <button data-speed="0.9" class="active" id="speedNormal">正常</button>
+          <button data-speed="1.1" id="speedFast">流暢</button>
+        </div>
+        <button class="play-dialog-btn" id="btnPlayDialogue">▶ 播整段對話</button>
+      </div>
+      <div class="speech-warning" id="speechWarning">
+        ⚠ 你的瀏覽器似乎不支援語音合成，請改用 Chrome / Safari / Edge。
+      </div>
+
+      <div class="daily-grid">
+        <div class="daily-block">
+          <h3>使用情境 / When to Use</h3>
+          <div class="body" id="phraseContext">—</div>
+        </div>
+        <div class="daily-block subtext">
+          <h3>言外之意 / What It Really Means</h3>
+          <div class="body" id="phraseSubtext">—</div>
+        </div>
+      </div>
+
+      <div class="daily-grid" style="grid-template-columns: 1fr;">
+        <div class="daily-block">
+          <h3>實戰對話 / Sample Dialogue</h3>
+          <div class="dialogue" id="phraseDialogue"></div>
+        </div>
+      </div>
+
+      <div class="daily-controls">
+        <button class="btn primary" id="btnNextPhrase">下一句 NEXT</button>
+        <button class="fav-btn" id="btnFav">★ 收藏</button>
+        <span class="counter-text">
+          <span id="phraseIndex">1</span> / <span id="phraseTotal">—</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PANEL 2: DECODER -->
+  <section class="panel" id="panel-decoder">
+    <p class="decoder-intro">
+      他們嘴上說的，跟心裡想的，從來不是同一回事。<br>
+      <em>What they say is rarely what they mean. Here's the cheat sheet.</em>
+    </p>
+    <input type="text" class="decoder-search" placeholder="搜尋一句... e.g. circle back, gentle reminder" id="decoderSearch" />
+    <ul class="decoder-list" id="decoderList"></ul>
+  </section>
+
+  <!-- PANEL 3: DRILL -->
+  <section class="panel" id="panel-drill">
+    <p class="drill-intro">
+      情境化測驗。讀完中文情境，挑出最得體（且最不會把自己埋掉）的英文回應。<br>
+      <em>Choose the response that gets you out of the situation alive.</em>
+    </p>
+    <div class="drill-scorebar">
+      <div class="score-block">
+        <span>答對 <strong class="correct-num" id="scoreCorrect">0</strong></span>
+        <span>答錯 <strong class="wrong-num" id="scoreWrong">0</strong></span>
+        <span>準確率 <strong id="scoreAccuracy">—</strong></span>
+      </div>
+      <button class="reset-score" id="btnResetScore">重置分數</button>
+    </div>
+    <div class="drill-counter">第 <strong id="drillNum">1</strong> 題 · 共 <strong id="drillTotal">—</strong> 題</div>
+    <div class="drill-situation">
+      <p id="drillSituation">—</p>
+    </div>
+    <div class="drill-options" id="drillOptions"></div>
+    <div class="drill-shadow" id="drillShadow">
+      <span class="shadow-label">跟讀練習</span>
+      <span class="shadow-line" id="drillShadowText">—</span>
+      <button class="speak-btn" id="btnDrillShadow" aria-label="播放正解" title="播放正解">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      </button>
+    </div>
+    <div class="drill-explain" id="drillExplain">
+      <h4>講評 / Why This Works</h4>
+      <p id="drillReason">—</p>
+    </div>
+    <div class="drill-controls">
+      <button class="btn primary" id="btnNextDrill" disabled>下一題 NEXT</button>
+      <button class="btn" id="btnRestartDrill">從頭再來</button>
+    </div>
+  </section>
+
+  <!-- PANEL 4: FAVORITES -->
+  <section class="panel" id="panel-fav">
+    <p class="fav-intro">
+      你壓力來時最想記住的那幾句。隨時打開複習。<br>
+      <em>The lines worth memorizing for your next ambush.</em>
+    </p>
+    <div id="favList"></div>
+  </section>
+
+  <footer class="doc-footer">
+    <span>PAGE 01 / 01</span>
+    <span class="disclaimer">本手冊不對職涯結果負任何責任。</span>
+    <span>CLASSIFIED · 機密</span>
+  </footer>
+
+</main>
+
+<script>
+/* ===================== DATA ===================== */
+
+const PHRASES = [
+  {
+    en: "Let's circle back on this.",
+    zh: "我們之後再聊這件事。",
+    context: "會議快結束、討論卡住、或你不想當下做決定時的萬用脫身術。",
+    subtext: "翻譯：我希望這件事自然消失。如果你下次再問起，我會假裝不記得有講過。",
+    dialogue: [
+      ["A", "So can we ship this by Friday?"],
+      ["B", "Hmm, lots of moving parts. Let's circle back on this next week."],
+      ["A", "...好的（再見了，Friday）。"]
+    ]
+  },
+  {
+    en: "Per my last email...",
+    zh: "如同我先前那封信所述......",
+    context: "當對方問了一個你信裡明明寫得清清楚楚的問題時。",
+    subtext: "中文版：你他X的有沒有在看信？但披著禮貌的外衣，且留下證據。",
+    dialogue: [
+      ["A", "Wait, when's the deadline again?"],
+      ["B", "Per my last email (sent Tuesday, 9:42am), it's this Friday EOD."],
+      ["A", "Got it, thanks!（被打臉）"]
+    ]
+  },
+  {
+    en: "Just a gentle reminder...",
+    zh: "溫馨提醒一下......",
+    context: "對方拖太久沒回覆，你需要催，但又不想顯得太凶。",
+    subtext: "「gentle」三秒前還很 gentle，三秒後可以升級成 firm reminder、final reminder、然後 cc 你主管。",
+    dialogue: [
+      ["A", "Just a gentle reminder that the report was due yesterday."],
+      ["B", "Oh sorry, I'll get to it!"],
+      ["A", "（三天後）Following up on my gentle reminder..."]
+    ]
+  },
+  {
+    en: "Could you loop me in on this?",
+    zh: "可以把我加進這個討論嗎？",
+    context: "你想知道某件事的進度／決策，但又不想顯得在打探。",
+    subtext: "中性偏正面的說法。但如果你 loop 進主管 = 你準備升級事件了。",
+    dialogue: [
+      ["A", "We're working out the new vendor contract."],
+      ["B", "Could you loop me in on the email thread? I want to stay updated."],
+      ["A", "Sure, adding you now."]
+    ]
+  },
+  {
+    en: "Let's take this offline.",
+    zh: "我們會後私下聊。",
+    context: "會議中，某個話題突然偏了 / 太敏感 / 你不想在這麼多人面前處理。",
+    subtext: "意思是：「閉嘴，不要在這個會議上繼續講這個。」很多時候，offline 永遠不會發生。",
+    dialogue: [
+      ["A", "But why did marketing get a bigger budget than us?"],
+      ["B", "Good point — let's take this offline and discuss it after the meeting."],
+      ["A", "（會後杳無音訊）"]
+    ]
+  },
+  {
+    en: "I don't have the bandwidth right now.",
+    zh: "我目前沒有餘力處理這個。",
+    context: "委婉拒絕額外工作。比 \"I'm too busy\" 更專業、更難拒絕。",
+    subtext: "Bandwidth = 頻寬，這裡比喻你的精力／時間配額。重點是把問題包裝成「容量」而不是「意願」。",
+    dialogue: [
+      ["A", "Could you also handle the Q4 deck?"],
+      ["B", "I'd love to, but I don't have the bandwidth this week. Could we revisit next Monday?"],
+      ["A", "Fair enough."]
+    ]
+  },
+  {
+    en: "I'll take a look and get back to you.",
+    zh: "我看一下再回覆你。",
+    context: "對方拋給你一個問題，你還沒準備好回答（或不想回答）。",
+    subtext: "標準延遲術。常見 follow-up 時程：當天 → 三天後 → 一週後 → 你裝忘了。",
+    dialogue: [
+      ["A", "Can you check if the numbers add up?"],
+      ["B", "Sure, let me take a look and get back to you."],
+      ["A", "Great, by EOD?"],
+      ["B", "...by EO-week."]
+    ]
+  },
+  {
+    en: "Just bumping this up your inbox.",
+    zh: "這封信往上頂一下，提醒你看一下。",
+    context: "你寄了信沒人回。第二次寄。第三次寄。",
+    subtext: "極度禮貌的「我要崩潰了你到底要不要回我」。每 bump 一次，怒氣 +1。",
+    dialogue: [
+      ["A", "Hi! Just bumping this up your inbox in case it got buried."],
+      ["B", "Oh! Sorry, totally missed it. Replying now."],
+      ["A", "（你他媽明明已讀了）"]
+    ]
+  },
+  {
+    en: "Thanks for flagging this.",
+    zh: "謝謝你提出來／謝謝你提醒。",
+    context: "別人指出一個問題時的標準回應，無論你內心覺得是大事還小事。",
+    subtext: "中性詞。可以是真心感謝，也可以是「我知道這件事鬧大了，先給你一個正面回應」。",
+    dialogue: [
+      ["A", "I noticed the report has the wrong numbers in section 3."],
+      ["B", "Thanks for flagging this — I'll get it corrected today."],
+      ["A", "👍"]
+    ]
+  },
+  {
+    en: "Just to align on this...",
+    zh: "只是想對一下我們的想法／確認一下方向......",
+    context: "你想確認大家想的是同一件事，避免之後做白工。",
+    subtext: "Align = 對齊。聽起來很合作，但常常是「我懷疑你跟我想的不一樣，先講清楚」。",
+    dialogue: [
+      ["A", "Just to align on this — we're targeting end of March for launch, right?"],
+      ["B", "Yes, end of March."],
+      ["A", "（先留下證據，免得你之後改口）"]
+    ]
+  },
+  {
+    en: "I'll defer to your judgment.",
+    zh: "我尊重你的判斷／聽你的。",
+    context: "你不想為這個決定負責，把球丟回給對方。",
+    subtext: "聽起來是給對方面子，實際上是脫身術。日後出事，你可以說「當時你決定的呀」。",
+    dialogue: [
+      ["A", "Should we go with vendor A or B?"],
+      ["B", "I'll defer to your judgment — you've worked with them more closely."],
+      ["A", "（你不想負責對吧）"]
+    ]
+  },
+  {
+    en: "I have some thoughts.",
+    zh: "我有一些想法。",
+    context: "你看到一個方案，覺得不行，但又不想當場吵起來。",
+    subtext: "翻譯：我覺得這個東西有問題，而且問題不小。請做好心理準備。",
+    dialogue: [
+      ["A", "Here's the new pitch deck."],
+      ["B", "Cool... I have some thoughts. Want to grab 15 minutes?"],
+      ["A", "（完蛋了。）"]
+    ]
+  },
+  {
+    en: "Going forward, let's make sure...",
+    zh: "之後我們要確保......",
+    context: "事情已經出包，你不想直接點名指責，但要確保下次不會再發生。",
+    subtext: "委婉指正模板。「going forward」= 我不打算追究這次，但下次不要再來這套。",
+    dialogue: [
+      ["A", "Sorry the file got sent to the wrong client."],
+      ["B", "It's okay this time — going forward, let's make sure we double-check the recipient."],
+      ["A", "Understood, won't happen again."]
+    ]
+  },
+  {
+    en: "Let's park this for now.",
+    zh: "這個先暫時擱置。",
+    context: "討論卡住、優先順序不對、或大家都累了。",
+    subtext: "Park = 停車。停在哪？停車場深處。通常一停就是永遠。",
+    dialogue: [
+      ["A", "Should we redesign the entire onboarding flow?"],
+      ["B", "Big question — let's park this for now and revisit next quarter."],
+      ["A", "（park 進無底洞）"]
+    ]
+  },
+  {
+    en: "Could we sync on this briefly?",
+    zh: "可以快速同步一下嗎？",
+    context: "你需要當面（或視訊）跟對方對齊一件事，書面說不清楚。",
+    subtext: "「briefly」是禮貌詞，實際上常常 sync 一小時。Sync 也常是「你做的那個東西有問題，我們得談談」的前奏。",
+    dialogue: [
+      ["A", "Could we sync briefly on the design decisions?"],
+      ["B", "Sure, 15 mins?"],
+      ["A", "（90 分鐘後仍在開會）"]
+    ]
+  },
+  {
+    en: "Noted.",
+    zh: "收到。",
+    context: "你聽到了對方說的話，但不想多回應。",
+    subtext: "極簡萬用詞。可以是真心收到，也可以是「我聽到了但我不一定會做」。語氣全靠上下文。",
+    dialogue: [
+      ["A", "Please send your weekly reports by Friday from now on."],
+      ["B", "Noted."],
+      ["A", "（這個 noted 到底是 yes 還是 fuck off？）"]
+    ]
+  },
+  {
+    en: "I appreciate your perspective.",
+    zh: "我了解你的角度。",
+    context: "對方提了一個你不同意的看法，你想表達「我聽到了」但不想接受。",
+    subtext: "翻譯：你的意見我聽到了，但我不會採納。常常後面接一個「however」或「that said」。",
+    dialogue: [
+      ["A", "I think we should redesign the homepage."],
+      ["B", "I appreciate your perspective. That said, our research shows users don't have issues with the current design."],
+      ["A", "（被軟釘子釘住）"]
+    ]
+  },
+  {
+    en: "Let me know if I'm missing anything.",
+    zh: "如果我有遺漏什麼，請告訴我。",
+    context: "你寄了一封看似完整的信／報告，給自己一個保險。",
+    subtext: "禮貌的 \"I'm done, your turn\"。同時把球踢回對方：要是你發現問題，是你沒講；不發現，那就視同同意。",
+    dialogue: [
+      ["A", "Attached is the final draft. Let me know if I'm missing anything!"],
+      ["B", "Looks good!"],
+      ["A", "（已留下「你說 OK 的」證據）"]
+    ]
+  },
+  {
+    en: "Just to double-check...",
+    zh: "我再確認一下......",
+    context: "你心裡覺得對方搞錯了，但不想直接說「你錯了」。",
+    subtext: "委婉糾錯模板。「double-check」表面上是自己再確認，實際上是讓對方自己發現問題。",
+    dialogue: [
+      ["A", "I'll send the invoice to accounting@..."],
+      ["B", "Just to double-check — isn't the new email finance@... since last month?"],
+      ["A", "Oh right! Thanks for catching that."]
+    ]
+  },
+  {
+    en: "Happy to chat further if helpful.",
+    zh: "如果有幫助的話，很樂意再聊。",
+    context: "信件結尾的萬用句，禮貌且開放。",
+    subtext: "中性詞，但「if helpful」三個字超有距離感——意思是「我不會主動約你，是你想要才約」。",
+    dialogue: [
+      ["A", "Hope this helps! Happy to chat further if helpful."],
+      ["B", "Thanks, will reach out if needed."],
+      ["A", "（雙方都不會主動）"]
+    ]
+  }
+];
+
+const DECODER = [
+  { said: "Let's circle back", saidZh: "我們之後再回來討論", meant: "我希望這件事被遺忘" },
+  { said: "Per my last email", saidZh: "如同我上一封信", meant: "你他媽根本沒看信" },
+  { said: "As discussed...", saidZh: "如同先前所討論的", meant: "我要在這裡留下白紙黑字的證據" },
+  { said: "Friendly reminder", saidZh: "友善提醒", meant: "你他X的拖太久了" },
+  { said: "Just checking in", saidZh: "我來關心一下進度", meant: "為什麼還沒做完？" },
+  { said: "Let's take this offline", saidZh: "我們會後再聊", meant: "閉嘴，別在這裡講" },
+  { said: "Interesting perspective", saidZh: "有趣的觀點", meant: "我完全不同意，但今天懶得吵" },
+  { said: "We should sync soon", saidZh: "我們應該對一下", meant: "你做的東西有問題，得談談" },
+  { said: "When you get a chance", saidZh: "等你有空時", meant: "現在，立刻，馬上" },
+  { said: "Looping in [boss]", saidZh: "把主管加進來", meant: "我要升級這件事，準備好" },
+  { said: "Just to clarify...", saidZh: "我釐清一下", meant: "你完全搞錯了" },
+  { said: "Noted", saidZh: "收到", meant: "我聽到了，但會不會做是另一回事" },
+  { said: "Thanks for flagging", saidZh: "謝謝你提出來", meant: "感謝你終於發現了這個問題" },
+  { said: "Let's park this", saidZh: "這個先擱置", meant: "我們永遠不會回頭看了" },
+  { said: "Going forward...", saidZh: "之後我們要......", meant: "之前都搞錯了，從現在起別再來這套" },
+  { said: "Bandwidth issues", saidZh: "頻寬不夠（沒空）", meant: "我不想做" },
+  { said: "I have some thoughts", saidZh: "我有一些想法", meant: "我覺得這完全是垃圾" },
+  { said: "Bold decision", saidZh: "勇敢的決定", meant: "你瘋了" },
+  { said: "I appreciate your input", saidZh: "謝謝你的意見", meant: "你的意見我聽到了，但不重要" },
+  { said: "Let's regroup", saidZh: "我們重新討論", meant: "第一輪沒成功，我們再試一次" },
+  { said: "I'll take a look", saidZh: "我會看一下", meant: "我會看，但不保證何時" },
+  { said: "Touching base", saidZh: "聊一下進度", meant: "你還活著嗎？事情做了沒？" },
+  { said: "Quick question...", saidZh: "我問個快速的問題", meant: "這個問題會耗掉你 20 分鐘" },
+  { said: "Apologies for the delay", saidZh: "抱歉延遲了", meant: "我把你信丟在收件匣兩週了，現在才回" },
+  { said: "Per our previous discussion", saidZh: "如同先前討論", meant: "我們講過了，你別再亂講話" },
+  { said: "I hear you", saidZh: "我聽到你了", meant: "我聽到了，但不會改變任何事" },
+  { said: "FYI", saidZh: "供參考", meant: "我要把責任甩給你了" },
+  { said: "Just my two cents", saidZh: "我的一點淺見", meant: "我接下來要長篇大論說教" },
+  { said: "No worries if not!", saidZh: "沒做也沒關係！", meant: "你最好給我做" },
+  { said: "Open to feedback", saidZh: "歡迎建議", meant: "請給我正面回饋" }
+];
+
+const DRILLS = [
+  {
+    situation: "主管在週五下午 5:50 在 Slack 傳訊息：「Hey, can you look into the Q3 numbers tonight?」你不想加班，但也不想直接拒絕。最得體的回應是？",
+    options: [
+      { text: "I'm off the clock, see you Monday.", correct: false, why: "太直白。下班就是下班沒錯，但這種講法在多數職場文化下會被視為不合作。" },
+      { text: "Sure, what time should I have it ready?", correct: false, why: "你已經默默接受加班了，且沒有設下任何邊界。下次主管會更自然地把你當隨傳隨到。" },
+      { text: "I'm wrapping up for the weekend — happy to dive in first thing Monday morning. Let me know if it's truly urgent and I'll find a way.", correct: true, why: "禮貌地表明你下班了，主動提出週一早上是第一順位（顯得合作），同時留一個「真的緊急再說」的後門——讓主管自己衡量是不是真的需要犧牲你的週末。" },
+      { text: "No.", correct: false, why: "誠實但會出事。除非你有極其堅實的理由（如已預先請假），否則太硬。" }
+    ]
+  },
+  {
+    situation: "同事 Mike 在跨部門會議上，把一個你們團隊明明做完的事情，講成是他做的。你想當場澄清，但又不想顯得在搶功。",
+    options: [
+      { text: "Actually, my team did all of that, not Mike.", correct: false, why: "事實正確，但語氣太對立，會讓場面尷尬，且讓你看起來在計較。" },
+      { text: "Just to add a bit of context — our team led the execution on that, and Mike's been a great partner in coordinating across functions. Happy to walk through the details if useful.", correct: true, why: "禮貌地把功勞拉回來、不否定 Mike 的貢獻、且提供進一步說明的開放式邀請——讓在場的人自己理解誰實際上做了多少。" },
+      { text: "（什麼都不說，會後跟主管抱怨）", correct: false, why: "短期看似安全，但功勞會永遠被搶走。背後抱怨也讓你顯得被動。" },
+      { text: "Mike, that's not really accurate.", correct: false, why: "公開打臉同事，會讓所有人都尷尬，也讓你看起來在內鬥。" }
+    ]
+  },
+  {
+    situation: "你寄了一封重要的信給客戶三天了，對方完全沒回。你需要催，但客戶是大戶，不能太強勢。",
+    options: [
+      { text: "Why haven't you responded yet?", correct: false, why: "完全沒禮貌。客戶會覺得你在質問。" },
+      { text: "Just bumping this up in case it got buried — happy to jump on a quick call if it's easier!", correct: true, why: "經典商務催信句。「got buried」給對方台階下（假裝是信被埋掉，不是他懶得回）；提供 call 是降低對方回信成本的選項。" },
+      { text: "Following up.", correct: false, why: "太短促，看起來在賭氣。商務信件需要至少一句完整的話。" },
+      { text: "I noticed you haven't responded to my previous email.", correct: false, why: "事實正確，但語氣帶質問感。讓對方有種被指控的感覺。" }
+    ]
+  },
+  {
+    situation: "主管臨時丟一個你做不到的死線：「Can you have the full report ready by tomorrow morning?」你知道辦不到，要怎麼推回去而不顯得在抱怨？",
+    options: [
+      { text: "Tomorrow's impossible.", correct: false, why: "太絕對。職場裡「impossible」這個詞很少用——不是因為事情真的可能，是因為這個詞會讓主管覺得你不合作。" },
+      { text: "I'll try my best!", correct: false, why: "最糟的選擇。你明明做不到，卻給對方錯誤期待。明天早上交不出來時，責任會在你。" },
+      { text: "I want to make sure I deliver something solid — to do that properly, I'd need until end of day tomorrow. If you need a partial draft by morning, I can get you the executive summary first. What works best?", correct: true, why: "三件事都做到了：(1) 表達你想做好的態度 (2) 給出實際做得到的時程 (3) 提供折衷方案讓主管選。把決策權還給主管，但你已經設好邊界。" },
+      { text: "I have other priorities right now.", correct: false, why: "聽起來像在踢皮球，且主管會覺得你不知道什麼是 priority（言下之意是這個就是 priority）。" }
+    ]
+  },
+  {
+    situation: "一個沒什麼意義的會議邀請丟到你信箱（45 分鐘、9 個與會者、議題模糊）。你不想去，但邀請人是別部門主管，不能直接拒。",
+    options: [
+      { text: "I won't make it.", correct: false, why: "太短，沒禮貌。也沒留下你願意參與的彈性。" },
+      { text: "Could you share what specific input you'd need from me? I might be able to send my thoughts in advance and free up the time on both ends — happy to join if there's something I should weigh in on live.", correct: true, why: "高招。沒有直接拒絕，反而把球踢回去問「你到底要我幹嘛」。多數時候對方根本說不出來，會回你「沒事你不用來」。" },
+      { text: "I have a conflict, sorry!", correct: false, why: "可以用，但這招用多了會被識破。且如果你之後在公司裡被看到沒事，會很尷尬。" },
+      { text: "This meeting could've been an email.", correct: false, why: "你心裡可以這樣想，但千萬別寫出來。" }
+    ]
+  },
+  {
+    situation: "你不小心寄錯了文件給客戶（敏感版本）。發現的當下要怎麼處理才能傷害最小？",
+    options: [
+      { text: "（裝作沒事，希望對方沒注意到）", correct: false, why: "賭運氣。一旦對方發現，損害會放大十倍——隱瞞比錯誤本身嚴重。" },
+      { text: "Apologies, I sent the wrong file by mistake. Please find the correct version attached. Could you kindly disregard and delete the previous one? Let me know if you have any questions.", correct: true, why: "三步驟標準流程：道歉、附正確檔、請對方刪除舊檔。用「kindly」軟化要求。最後一句留下溝通管道。乾淨、專業、不過度自責。" },
+      { text: "OMG I am SO sorry, I can't believe I did that, I'm such an idiot, please forgive me!!!", correct: false, why: "太誇張的道歉反而顯得不專業，會讓客戶懷疑你的可靠度。商業道歉要簡短有力。" },
+      { text: "There was an error in the previous email.", correct: false, why: "用被動語態（「there was an error」）試圖避責，反而看起來在閃躲。要主動承認是「I sent」。" }
+    ]
+  },
+  {
+    situation: "團隊會議上，主管問了你一個你完全不知道答案的問題（你沒做功課）。要怎麼回最不丟臉？",
+    options: [
+      { text: "I don't know.", correct: false, why: "誠實但太赤裸。沒有任何補救方案，會讓人覺得你準備不足。" },
+      { text: "Let me look into that and circle back with you by EOD.", correct: true, why: "經典脫身術：(1) 不假裝知道 (2) 設下明確的回覆時程（EOD = End of Day，今天下班前）(3) 表現出主動跟進的態度。重點是：說了 EOD 就一定要在 EOD 前回，不然信用破產。" },
+      { text: "（亂編一個答案）", correct: false, why: "極度危險。如果之後被發現你瞎掰，信用就毀了——而商業環境裡，信用比答案重要太多。" },
+      { text: "Why are you asking me?", correct: false, why: "顯然不行。看起來是在反擊主管。" }
+    ]
+  },
+  {
+    situation: "同事在 Slack 上私訊你抱怨另一個同事，希望你附和。你不想介入辦公室政治，但也不想得罪他。",
+    options: [
+      { text: "Yeah he's the worst.", correct: false, why: "看起來只是私訊。但這些對話可能截圖、可能轉傳。永遠不要寫下你不想被公開的東西。" },
+      { text: "Hmm, I get the frustration. Have you tried bringing it up with them directly? Sometimes that surfaces things you didn't expect.", correct: true, why: "三件事：(1) 同理對方情緒（不冷漠）(2) 不附和八卦 (3) 把球踢回去——建議他直接溝通。聽起來成熟、不介入、且給了實際建議。" },
+      { text: "I don't want to talk about this.", correct: false, why: "太硬。對方會覺得你在拒絕他。可以拒絕話題，但要更圓融。" },
+      { text: "（已讀不回）", correct: false, why: "短期沒事，但對方可能會記得你在他需要時消失了。需要更主動的回應。" }
+    ]
+  },
+  {
+    situation: "你交出去的工作被主管當場大改，你覺得改得不對，但不想當場吵架。",
+    options: [
+      { text: "I disagree.", correct: false, why: "太直接。不是不能 disagree，但需要用更專業的包裝。" },
+      { text: "Sure, whatever you think.", correct: false, why: "看似順從，但你心裡不服，下次還會出同樣問題。且讓主管覺得你沒有自己的判斷。" },
+      { text: "Help me understand the thinking behind this change — I want to make sure I apply the same logic next time. I had originally gone with [your version] because [reason], but happy to adjust if there's context I'm missing.", correct: true, why: "高段位回應：(1) 不對立，先問理由 (2) 表達學習意願 (3) 同時留下你原本的邏輯（讓對方知道你有思考）(4) 開放空間給對方說明，可能對方真的有你不知道的資訊。" },
+      { text: "Are you sure about this change?", correct: false, why: "太挑戰。這句話在英文職場聽起來很質疑對方判斷。" }
+    ]
+  },
+  {
+    situation: "Email 結尾，你想要禮貌但堅定地推進對方做決定（不要拖了），該怎麼寫？",
+    options: [
+      { text: "Please respond ASAP.", correct: false, why: "太強硬。ASAP 在商務信件中常被視為不耐煩。" },
+      { text: "Looking forward to your thoughts!", correct: false, why: "太被動。沒有時間錨點，對方可以無限拖延。" },
+      { text: "To keep the project on track, could you confirm your decision by Wednesday EOD? Happy to hop on a call if it'd help speed things up.", correct: true, why: "完美三件套：(1) 給拖延一個正當理由（「to keep the project on track」是團隊利益不是你的私心）(2) 設下明確的死線 (3) 提供 call 的選項減少對方阻力。" },
+      { text: "When can I expect a response?", correct: false, why: "可以用，但帶有問責感，且沒有給對方一個合作的框架。" }
+    ]
+  },
+  {
+    situation: "你想離職了，主管臨時找你 1:1，你不確定他知不知道。他開頭問：「How are things going?」你要怎麼回最安全？",
+    options: [
+      { text: "Honestly, I've been thinking about leaving.", correct: false, why: "太衝動。在你還沒準備好正式提離職前（且還沒準備好 offer），不要先把底牌打出來。" },
+      { text: "Pretty good! Just heads-down on the usual stuff — anything specific you wanted to talk about?", correct: true, why: "經典反問模板：(1) 中性正面回應 (2) 不主動透露任何資訊 (3) 把球踢回去問對方意圖——讓主管自己揭開這次會議的目的。在你資訊不對等時，先讓對方先說。" },
+      { text: "Things are okay I guess.", correct: false, why: "「okay I guess」這種模糊負面語會引起主管追問，反而把你逼到角落。" },
+      { text: "Why do you ask?", correct: false, why: "太防備。直接讓主管覺得你心裡有鬼。" }
+    ]
+  },
+  {
+    situation: "你的提案被打槍了。對方寫信說「I don't think this is the right direction.」你不想放棄，但也不能硬幹。",
+    options: [
+      { text: "Could you elaborate on what concerns you specifically? I'd like to understand the gaps and see if there's a version of this that addresses them — or if it's worth pursuing at all.", correct: true, why: "成熟的回應：(1) 先求理解（不防衛）(2) 表達你願意調整 (3) 但也保留「或者其實該放棄」的選項——這顯示你不是死守自己的提案，而是真心要找最好的方案。" },
+      { text: "But I think it's the right direction.", correct: false, why: "直接對撞。你還沒搞清楚對方反對的點，就先表達立場，後面對話會很難進行。" },
+      { text: "Ok no problem, I'll drop it.", correct: false, why: "太快放棄。如果你真的相信這個提案，至少先了解一下對方的疑慮再決定要不要繼續推。" },
+      { text: "Can we discuss this with [bigger boss]?", correct: false, why: "直接 escalate 是核選項。會讓對方覺得你在繞過他，雙方關係很難修復。" }
+    ]
+  }
+];
+
+/* ===================== SPEECH ENGINE ===================== */
+
+const Speech = {
+  supported: 'speechSynthesis' in window,
+  voice: null,
+  rate: 0.9,
+  currentBtn: null,
+  currentUtter: null,
+
+  init() {
+    if (!this.supported) return;
+    // voices may load async
+    const loadVoices = () => {
+      const voices = window.speechSynthesis.getVoices();
+      // prefer high-quality English voices in this priority order
+      const preferred = [
+        v => /en-US/i.test(v.lang) && /Google US English/i.test(v.name),
+        v => /en-US/i.test(v.lang) && /Samantha|Alex|Karen|Daniel/i.test(v.name),
+        v => /en-GB/i.test(v.lang) && /Google UK English/i.test(v.name),
+        v => /en-US/i.test(v.lang) && /female/i.test(v.name),
+        v => /en-US/i.test(v.lang),
+        v => /en-GB/i.test(v.lang),
+        v => /^en/i.test(v.lang),
+      ];
+      for (const test of preferred) {
+        const found = voices.find(test);
+        if (found) { this.voice = found; return; }
+      }
+    };
+    loadVoices();
+    if (window.speechSynthesis.onvoiceschanged !== undefined) {
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+  },
+
+  setRate(r) { this.rate = r; },
+
+  stop() {
+    if (!this.supported) return;
+    window.speechSynthesis.cancel();
+    if (this.currentBtn) {
+      this.currentBtn.classList.remove('playing');
+      this.currentBtn = null;
+    }
+    this.currentUtter = null;
+  },
+
+  // speak a single phrase, optionally with a button to indicate playing state
+  speak(text, btn = null, opts = {}) {
+    if (!this.supported) return Promise.resolve();
+    return new Promise((resolve) => {
+      // stop any ongoing speech
+      this.stop();
+
+      const u = new SpeechSynthesisUtterance(text);
+      if (this.voice) u.voice = this.voice;
+      u.lang = (this.voice && this.voice.lang) || 'en-US';
+      u.rate = opts.rate || this.rate;
+      u.pitch = opts.pitch || 1;
+      u.volume = 1;
+
+      if (btn) {
+        btn.classList.add('playing');
+        this.currentBtn = btn;
+      }
+      this.currentUtter = u;
+
+      u.onend = () => {
+        if (btn) btn.classList.remove('playing');
+        if (this.currentBtn === btn) this.currentBtn = null;
+        this.currentUtter = null;
+        resolve();
+      };
+      u.onerror = () => {
+        if (btn) btn.classList.remove('playing');
+        if (this.currentBtn === btn) this.currentBtn = null;
+        this.currentUtter = null;
+        resolve();
+      };
+
+      window.speechSynthesis.speak(u);
+    });
+  },
+
+  // speak a sequence of [speaker, text, voiceOpts] items, with optional per-line callback
+  async speakSequence(lines, onLineStart, onLineEnd, isCancelled) {
+    for (let i = 0; i < lines.length; i++) {
+      if (isCancelled && isCancelled()) break;
+      const line = lines[i];
+      if (onLineStart) onLineStart(i);
+      // give two voices for A vs B to make dialogue clearer
+      const opts = line.opts || {};
+      await this.speak(line.text, null, opts);
+      if (onLineEnd) onLineEnd(i);
+      // brief pause between speakers
+      if (i < lines.length - 1) await new Promise(r => setTimeout(r, 250));
+    }
+  }
+};
+
+/* ===================== STATE ===================== */
+
+let currentPhraseIdx = 0;
+let currentDrillIdx = 0;
+let drillAnswered = false;
+let favorites = new Set();
+let score = { correct: 0, wrong: 0 };
+
+/* ===================== STORAGE ===================== */
+
+async function storageGet(key, defaultValue) {
+  try {
+    if (typeof window.storage === 'undefined') return defaultValue;
+    const r = await window.storage.get(key);
+    if (r && r.value !== undefined) return JSON.parse(r.value);
+  } catch (e) { /* not yet saved */ }
+  return defaultValue;
+}
+
+async function storageSet(key, value) {
+  try {
+    if (typeof window.storage === 'undefined') return;
+    await window.storage.set(key, JSON.stringify(value));
+  } catch (e) { /* ignore */ }
+}
+
+/* ===================== INIT ===================== */
+
+async function init() {
+  setupHeader();
+  Speech.init();
+  if (!Speech.supported) {
+    document.getElementById('speechWarning').classList.add('show');
+  }
+  // load saved state
+  favorites = new Set(await storageGet('favorites', []));
+  score = await storageGet('score', { correct: 0, wrong: 0 });
+  const savedSpeed = await storageGet('speechRate', 0.9);
+  Speech.setRate(savedSpeed);
+
+  setupTabs();
+  setupSpeechControls();
+  setupDailyPhrase();
+  setupDecoder();
+  setupDrill();
+  setupFavorites();
+  updateFavBadge();
+  updateScoreDisplay();
+  updateSpeedToggle(savedSpeed);
+
+  // stop speech when switching tabs or leaving page
+  window.addEventListener('beforeunload', () => Speech.stop());
+}
+
+function setupHeader() {
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm = String(today.getMonth() + 1).padStart(2, '0');
+  const dd = String(today.getDate()).padStart(2, '0');
+  document.getElementById('todayDate').textContent = `${yyyy}.${mm}.${dd}`;
+  const fn = `OE-${yyyy}-${mm}${dd}-${Math.floor(today.getTime()/86400000) % 9999}`;
+  document.getElementById('fileNumber').textContent = fn;
+  const dayOfYear = Math.floor((today - new Date(yyyy,0,0)) / 86400000);
+  currentPhraseIdx = dayOfYear % PHRASES.length;
+}
+
+function setupTabs() {
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      Speech.stop(); // stop any ongoing playback when switching tab
+      dialoguePlaying = false;
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+      if (tab.dataset.tab === 'fav') renderFavorites();
+    });
+  });
+}
+
+/* ===================== SPEECH UI ===================== */
+
+let dialoguePlaying = false;
+
+function setupSpeechControls() {
+  // speed toggle
+  document.querySelectorAll('.speed-toggle button').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const speed = parseFloat(btn.dataset.speed);
+      Speech.setRate(speed);
+      updateSpeedToggle(speed);
+      await storageSet('speechRate', speed);
+    });
+  });
+
+  // speak phrase button
+  document.getElementById('btnSpeakPhrase').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    if (btn.classList.contains('playing')) {
+      Speech.stop();
+      return;
+    }
+    const phrase = PHRASES[currentPhraseIdx].en;
+    Speech.speak(phrase, btn);
+  });
+
+  // play whole dialogue
+  document.getElementById('btnPlayDialogue').addEventListener('click', async (e) => {
+    const btn = e.currentTarget;
+    if (dialoguePlaying) {
+      // toggle stop
+      dialoguePlaying = false;
+      Speech.stop();
+      btn.classList.remove('playing');
+      btn.textContent = '▶ 播整段對話';
+      // remove speaking highlight
+      document.querySelectorAll('#phraseDialogue p.speaking').forEach(p => p.classList.remove('speaking'));
+      return;
+    }
+
+    const dialogue = PHRASES[currentPhraseIdx].dialogue;
+    // build sequence — only speak English-content lines (skip Chinese-only narration in parens)
+    const lines = dialogue.map(([speaker, text]) => {
+      // detect if line is mostly Chinese parenthetical narration
+      const isChineseNarration = /^[（(].*[）)]$/.test(text.trim());
+      const cleanText = text.replace(/（[^）]*）/g, '').replace(/\([^)]*\)/g, '').trim();
+      return {
+        speaker,
+        text: isChineseNarration ? null : cleanText,
+        opts: {
+          // slight pitch difference for A vs B to distinguish speakers
+          pitch: speaker === 'A' ? 1.0 : 0.92
+        }
+      };
+    });
+
+    dialoguePlaying = true;
+    btn.classList.add('playing');
+    btn.textContent = '■ 停止';
+
+    const dialogElList = document.querySelectorAll('#phraseDialogue p');
+
+    await Speech.speakSequence(
+      lines.filter(l => l.text), // only speakable lines
+      null,
+      null,
+      () => !dialoguePlaying
+    );
+
+    // need a custom loop for highlighting
+    // (simpler: redo with index-aware loop)
+    // Actually, let's redo to highlight properly — replacing the sequence call
+  });
+
+  // Override the dialogue playback with a more controllable loop
+  document.getElementById('btnPlayDialogue').onclick = playDialogueWithHighlight;
+}
+
+async function playDialogueWithHighlight() {
+  const btn = document.getElementById('btnPlayDialogue');
+
+  if (dialoguePlaying) {
+    dialoguePlaying = false;
+    Speech.stop();
+    btn.classList.remove('playing');
+    btn.textContent = '▶ 播整段對話';
+    document.querySelectorAll('#phraseDialogue p.speaking').forEach(p => p.classList.remove('speaking'));
+    return;
+  }
+
+  if (!Speech.supported) return;
+
+  const dialogue = PHRASES[currentPhraseIdx].dialogue;
+  const dialogPs = document.querySelectorAll('#phraseDialogue p');
+
+  dialoguePlaying = true;
+  btn.classList.add('playing');
+  btn.textContent = '■ 停止';
+
+  for (let i = 0; i < dialogue.length; i++) {
+    if (!dialoguePlaying) break;
+    const [speaker, rawText] = dialogue[i];
+    // strip any parenthetical narration (both Chinese and English parens)
+    const cleanText = rawText.replace(/（[^）]*）/g, '').replace(/\([^)]*\)/g, '').trim();
+
+    // highlight current line
+    dialogPs.forEach((p, idx) => p.classList.toggle('speaking', idx === i));
+
+    if (cleanText) {
+      await Speech.speak(cleanText, null, {
+        pitch: speaker === 'A' ? 1.0 : 0.88
+      });
+    } else {
+      // pure narration line — pause briefly
+      await new Promise(r => setTimeout(r, 600));
+    }
+
+    if (i < dialogue.length - 1) await new Promise(r => setTimeout(r, 300));
+  }
+
+  // cleanup
+  dialogPs.forEach(p => p.classList.remove('speaking'));
+  dialoguePlaying = false;
+  btn.classList.remove('playing');
+  btn.textContent = '▶ 播整段對話';
+}
+
+function updateSpeedToggle(speed) {
+  document.querySelectorAll('.speed-toggle button').forEach(btn => {
+    btn.classList.toggle('active', parseFloat(btn.dataset.speed) === speed);
+  });
+}
+
+/* ===================== DAILY PHRASE ===================== */
+
+function setupDailyPhrase() {
+  document.getElementById('phraseTotal').textContent = PHRASES.length;
+  renderPhrase();
+  document.getElementById('btnNextPhrase').addEventListener('click', () => {
+    Speech.stop();
+    dialoguePlaying = false;
+    const dlgBtn = document.getElementById('btnPlayDialogue');
+    dlgBtn.classList.remove('playing');
+    dlgBtn.textContent = '▶ 播整段對話';
+    currentPhraseIdx = (currentPhraseIdx + 1) % PHRASES.length;
+    renderPhrase();
+  });
+  document.getElementById('btnFav').addEventListener('click', toggleFavorite);
+}
+
+function renderPhrase() {
+  const p = PHRASES[currentPhraseIdx];
+  document.getElementById('phraseEn').textContent = p.en;
+  document.getElementById('phraseZh').textContent = p.zh;
+  document.getElementById('phraseContext').textContent = p.context;
+  document.getElementById('phraseSubtext').textContent = p.subtext;
+  document.getElementById('phraseIndex').textContent = currentPhraseIdx + 1;
+
+  const dlg = document.getElementById('phraseDialogue');
+  dlg.innerHTML = p.dialogue.map(([s, t], i) => {
+    const cleanText = t.replace(/（[^）]*）/g, '').replace(/\([^)]*\)/g, '').trim();
+    const hasSpeakable = cleanText.length > 0;
+    const speakBtn = hasSpeakable
+      ? `<button class="speak-btn tiny" data-line="${i}" aria-label="播放這句" title="播放這句">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+        </button>`
+      : '';
+    return `<p data-line="${i}"><span class="speaker">${s}:</span><span class="line-text">${escapeHtml(t)}</span>${speakBtn}</p>`;
+  }).join('');
+
+  // wire per-line speak buttons
+  dlg.querySelectorAll('.speak-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const lineIdx = parseInt(btn.dataset.line);
+      const [speaker, rawText] = p.dialogue[lineIdx];
+      const cleanText = rawText.replace(/(\u3010[^\u3011]*\u3011)|(（[^）]*）)/g, '').replace(/\([^)]*\)/g, '').trim();
+      if (!cleanText) return;
+      if (btn.classList.contains('playing')) {
+        Speech.stop();
+        return;
+      }
+      Speech.speak(cleanText, btn, {
+        pitch: speaker === 'A' ? 1.0 : 0.88
+      });
+    });
+  });
+
+  const favBtn = document.getElementById('btnFav');
+  if (favorites.has(p.en)) {
+    favBtn.classList.add('active');
+    favBtn.textContent = '★ 已收藏';
+  } else {
+    favBtn.classList.remove('active');
+    favBtn.textContent = '★ 收藏';
+  }
+}
+
+async function toggleFavorite() {
+  const phrase = PHRASES[currentPhraseIdx].en;
+  if (favorites.has(phrase)) {
+    favorites.delete(phrase);
+  } else {
+    favorites.add(phrase);
+  }
+  renderPhrase();
+  updateFavBadge();
+  await storageSet('favorites', [...favorites]);
+}
+
+function updateFavBadge() {
+  const badge = document.getElementById('favBadge');
+  badge.textContent = favorites.size;
+  if (favorites.size === 0) badge.classList.add('empty');
+  else badge.classList.remove('empty');
+}
+
+/* ===================== DECODER ===================== */
+
+function setupDecoder() {
+  renderDecoderList(DECODER);
+  document.getElementById('decoderSearch').addEventListener('input', (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    if (!q) { renderDecoderList(DECODER); return; }
+    const filtered = DECODER.filter(d =>
+      d.said.toLowerCase().includes(q) ||
+      d.saidZh.includes(q) ||
+      d.meant.toLowerCase().includes(q)
+    );
+    renderDecoderList(filtered);
+  });
+}
+
+function renderDecoderList(items) {
+  const list = document.getElementById('decoderList');
+  if (items.length === 0) {
+    list.innerHTML = '<div class="no-results">查無此句。也許你的同事還沒學會這招。</div>';
+    return;
+  }
+  list.innerHTML = items.map((d, i) => `
+    <li class="decoder-item">
+      <div class="decoder-said">
+        <span class="said-en-row">
+          ${escapeHtml(d.said)}
+          <button class="speak-btn tiny decoder-speak" data-text="${escapeHtml(d.said)}" aria-label="播放" title="播放">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+          </button>
+        </span>
+        <span class="said-zh">${escapeHtml(d.saidZh)}</span>
+      </div>
+      <div class="decoder-arrow">真實意思 →</div>
+      <div class="decoder-meant">${escapeHtml(d.meant)}</div>
+    </li>
+  `).join('');
+
+  // wire decoder speak buttons
+  list.querySelectorAll('.decoder-speak').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (btn.classList.contains('playing')) {
+        Speech.stop();
+        return;
+      }
+      Speech.speak(btn.dataset.text, btn);
+    });
+  });
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, m => ({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+  }[m]));
+}
+
+/* ===================== DRILL ===================== */
+
+function setupDrill() {
+  document.getElementById('drillTotal').textContent = DRILLS.length;
+  renderDrill();
+  document.getElementById('btnNextDrill').addEventListener('click', () => {
+    currentDrillIdx = (currentDrillIdx + 1) % DRILLS.length;
+    renderDrill();
+  });
+  document.getElementById('btnRestartDrill').addEventListener('click', () => {
+    currentDrillIdx = 0;
+    renderDrill();
+  });
+  document.getElementById('btnResetScore').addEventListener('click', async () => {
+    score = { correct: 0, wrong: 0 };
+    await storageSet('score', score);
+    updateScoreDisplay();
+  });
+
+  // shadow practice play button
+  document.getElementById('btnDrillShadow').addEventListener('click', (e) => {
+    const btn = e.currentTarget;
+    if (btn.classList.contains('playing')) {
+      Speech.stop();
+      return;
+    }
+    const text = document.getElementById('drillShadowText').textContent;
+    if (text && text !== '—') Speech.speak(text, btn);
+  });
+}
+
+function renderDrill() {
+  const d = DRILLS[currentDrillIdx];
+  drillAnswered = false;
+
+  document.getElementById('drillNum').textContent = currentDrillIdx + 1;
+  document.getElementById('drillSituation').textContent = d.situation;
+
+  const optsBox = document.getElementById('drillOptions');
+  optsBox.innerHTML = '';
+  d.options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'drill-option';
+    btn.innerHTML = `<span class="letter">${String.fromCharCode(65+i)}</span><span>${escapeHtml(opt.text)}</span>`;
+    btn.addEventListener('click', () => handleDrillAnswer(i));
+    optsBox.appendChild(btn);
+  });
+
+  document.getElementById('drillExplain').classList.remove('show');
+  document.getElementById('drillShadow').classList.remove('show');
+  document.getElementById('btnNextDrill').disabled = true;
+}
+
+async function handleDrillAnswer(picked) {
+  if (drillAnswered) return;
+  drillAnswered = true;
+  const d = DRILLS[currentDrillIdx];
+  const buttons = document.querySelectorAll('#drillOptions .drill-option');
+  buttons.forEach((b, i) => {
+    b.disabled = true;
+    if (d.options[i].correct) b.classList.add('correct');
+    else if (i === picked) b.classList.add('wrong');
+    else b.classList.add('faded');
+  });
+
+  const correctIdx = d.options.findIndex(o => o.correct);
+  const correctOpt = d.options[correctIdx];
+  const pickedOpt = d.options[picked];
+
+  let explainHtml = '';
+  if (picked === correctIdx) {
+    explainHtml = `<strong style="color: var(--green);">答對了。</strong> ${escapeHtml(correctOpt.why)}`;
+    score.correct++;
+  } else {
+    explainHtml = `<strong style="color: var(--stamp);">你選的：</strong> ${escapeHtml(pickedOpt.why)}<br><br><strong>較佳的回應是：</strong> <span class="gloss">「${escapeHtml(correctOpt.text)}」</span><br>${escapeHtml(correctOpt.why)}`;
+    score.wrong++;
+  }
+  document.getElementById('drillReason').innerHTML = explainHtml;
+  document.getElementById('drillExplain').classList.add('show');
+
+  // populate and show shadow practice block (with the correct answer)
+  document.getElementById('drillShadowText').textContent = correctOpt.text;
+  document.getElementById('drillShadow').classList.add('show');
+
+  document.getElementById('btnNextDrill').disabled = false;
+
+  updateScoreDisplay();
+  await storageSet('score', score);
+}
+
+function updateScoreDisplay() {
+  document.getElementById('scoreCorrect').textContent = score.correct;
+  document.getElementById('scoreWrong').textContent = score.wrong;
+  const total = score.correct + score.wrong;
+  const acc = total === 0 ? '—' : Math.round(100 * score.correct / total) + '%';
+  document.getElementById('scoreAccuracy').textContent = acc;
+}
+
+/* ===================== FAVORITES PANEL ===================== */
+
+function setupFavorites() {
+  // rendered on-demand when user clicks the tab
+}
+
+async function renderFavorites() {
+  const list = document.getElementById('favList');
+  if (favorites.size === 0) {
+    list.innerHTML = `
+      <div class="fav-empty">
+        <p>尚無收藏。</p>
+        <p>到「每日金句」按下 ★ 收藏鍵，把救命的句子存起來。</p>
+      </div>
+    `;
+    return;
+  }
+  const favPhrases = PHRASES.filter(p => favorites.has(p.en));
+  list.innerHTML = favPhrases.map(p => `
+    <div class="fav-card">
+      <div>
+        <div class="fav-en-row">
+          <div class="fav-en">"${escapeHtml(p.en)}"</div>
+          <button class="speak-btn fav-speak" data-text="${escapeHtml(p.en)}" aria-label="播放" title="播放">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+          </button>
+        </div>
+        <div class="fav-zh">${escapeHtml(p.zh)}</div>
+        <div class="fav-sub">${escapeHtml(p.subtext)}</div>
+      </div>
+      <button class="fav-remove" data-en="${escapeHtml(p.en)}">✕ 移除</button>
+    </div>
+  `).join('');
+
+  // wire fav speak buttons
+  list.querySelectorAll('.fav-speak').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (btn.classList.contains('playing')) {
+        Speech.stop();
+        return;
+      }
+      Speech.speak(btn.dataset.text, btn);
+    });
+  });
+
+  list.querySelectorAll('.fav-remove').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      favorites.delete(btn.dataset.en);
+      await storageSet('favorites', [...favorites]);
+      updateFavBadge();
+      renderFavorites();
+      // also update phrase view if currently showing this phrase
+      renderPhrase();
+    });
+  });
+}
+
+init();
+</script>
+</body>
+</html>
