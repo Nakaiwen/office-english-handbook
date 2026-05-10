@@ -669,6 +669,342 @@ body::before {
   border-color: var(--stamp);
 }
 
+/* ============ THEME CHIPS & CEFR BADGES ============ */
+.tag-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.theme-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid currentColor;
+  border-radius: 1px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.cefr-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 2px 6px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 1px;
+}
+
+.cefr-badge.a2 { background: #6a7a4a; }
+.cefr-badge.b1 { background: #4a6478; }
+.cefr-badge.b1\\+ { background: #4a6478; }
+.cefr-badge.b2 { background: #a8332f; }
+.cefr-badge.c1 { background: #1a1813; }
+
+.skill-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.1em;
+  padding: 2px 6px;
+  background: transparent;
+  color: var(--ink-3);
+  border: 1px dashed var(--ink-3);
+  border-radius: 1px;
+  text-transform: uppercase;
+}
+
+/* ============ THEME FILTER (chip bar) ============ */
+.theme-filter {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+  padding: 10px 0;
+  border-top: 1px dashed var(--ink-3);
+  border-bottom: 1px dashed var(--ink-3);
+}
+
+.theme-filter .filter-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-right: 4px;
+  align-self: center;
+}
+
+.theme-filter .filter-chip {
+  background: transparent;
+  border: 1px solid var(--ink-3);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: var(--ink-3);
+  border-radius: 1px;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+.theme-filter .filter-chip:hover {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.theme-filter .filter-chip.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+
+.theme-filter .filter-chip .count {
+  opacity: 0.6;
+  font-size: 9px;
+}
+
+/* ============ PLAN PANEL ============ */
+.plan-hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  padding: 24px 28px;
+  background: var(--paper-2);
+  border: 1px solid var(--ink-3);
+  border-left: 4px solid var(--stamp);
+  margin-bottom: 28px;
+  position: relative;
+}
+
+.plan-hero::before {
+  content: "ROADMAP / 學習藍圖";
+  position: absolute;
+  top: -8px; left: 22px;
+  background: var(--paper);
+  padding: 0 8px;
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--ink-3);
+}
+
+.plan-week-counter {
+  font-family: var(--serif);
+  text-align: center;
+  border-right: 1px solid var(--ink-3);
+  padding-right: 24px;
+  align-self: center;
+}
+
+.plan-week-counter .big {
+  display: block;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--stamp);
+  margin-bottom: 4px;
+}
+
+.plan-week-counter .small {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  display: block;
+}
+
+.plan-current-info h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.plan-current-info .phase-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 12px;
+}
+
+.plan-current-info .goal-text {
+  font-family: var(--serif);
+  font-size: 14.5px;
+  color: var(--ink-2);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.plan-current-info .skills-text {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--ink-3);
+  font-style: italic;
+}
+
+.plan-controls {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+/* phase grid */
+.plan-phases-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stamp);
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink-3);
+}
+
+.plan-phases {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.phase-card {
+  border: 1px solid var(--paper-3);
+  background: var(--paper);
+  padding: 16px 18px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.phase-card.current {
+  border: 1.5px solid var(--stamp);
+  background: rgba(168, 51, 47, 0.04);
+}
+
+.phase-card.done {
+  opacity: 0.55;
+}
+
+.phase-card .phase-num {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.2em;
+  color: var(--faded);
+  margin-bottom: 6px;
+}
+
+.phase-card .phase-name {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.phase-card .phase-week-range {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-3);
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+}
+
+.phase-card .phase-cefr {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--stamp);
+  font-weight: 600;
+  margin-bottom: 10px;
+  padding: 2px 6px;
+  display: inline-block;
+  border: 1px solid var(--stamp);
+  border-radius: 1px;
+}
+
+.phase-card .phase-themes {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.phase-card .phase-goal {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--ink-2);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* progress bars */
+.plan-progress-section h3 {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stamp);
+  margin: 32px 0 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--ink-3);
+}
+
+.theme-progress-row {
+  display: grid;
+  grid-template-columns: 110px 1fr 60px;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+}
+
+.theme-progress-row .theme-label {
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+}
+
+.theme-progress-row .progress-bar {
+  height: 14px;
+  background: var(--paper-3);
+  border: 1px solid var(--ink-3);
+  position: relative;
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.theme-progress-row .progress-bar .fill {
+  height: 100%;
+  transition: width 0.5s ease;
+}
+
+.theme-progress-row .progress-num {
+  font-size: 10.5px;
+  color: var(--ink-3);
+  text-align: right;
+  letter-spacing: 0.05em;
+}
+
 /* ============ FOOTER ============ */
 .doc-footer {
   margin-top: 48px;
@@ -975,12 +1311,17 @@ body::before {
     <button class="tab" data-tab="fav" role="tab">
       <span class="num">04</span>我的收藏<span class="badge empty" id="favBadge">0</span>
     </button>
+    <button class="tab" data-tab="plan" role="tab">
+      <span class="num">05</span>學習計畫
+    </button>
   </nav>
 
   <!-- PANEL 1: DAILY PHRASE -->
   <section class="panel active" id="panel-daily">
+    <div class="theme-filter" id="phraseThemeFilter"></div>
     <div class="daily-card">
       <div class="daily-stamp">本日訓練 · DAILY DRILL</div>
+      <div class="tag-row" id="phraseTagRow"></div>
       <div class="phrase-row">
         <div class="daily-phrase-en" id="phraseEn">—</div>
         <button class="speak-btn" id="btnSpeakPhrase" aria-label="播放發音" title="播放發音">
@@ -1036,6 +1377,7 @@ body::before {
       他們嘴上說的，跟心裡想的，從來不是同一回事。<br>
       <em>What they say is rarely what they mean. Here's the cheat sheet.</em>
     </p>
+    <div class="theme-filter" id="decoderThemeFilter"></div>
     <input type="text" class="decoder-search" placeholder="搜尋一句... e.g. circle back, gentle reminder" id="decoderSearch" />
     <ul class="decoder-list" id="decoderList"></ul>
   </section>
@@ -1046,6 +1388,7 @@ body::before {
       情境化測驗。讀完中文情境，挑出最得體（且最不會把自己埋掉）的英文回應。<br>
       <em>Choose the response that gets you out of the situation alive.</em>
     </p>
+    <div class="theme-filter" id="drillThemeFilter"></div>
     <div class="drill-scorebar">
       <div class="score-block">
         <span>答對 <strong class="correct-num" id="scoreCorrect">0</strong></span>
@@ -1055,6 +1398,7 @@ body::before {
       <button class="reset-score" id="btnResetScore">重置分數</button>
     </div>
     <div class="drill-counter">第 <strong id="drillNum">1</strong> 題 · 共 <strong id="drillTotal">—</strong> 題</div>
+    <div class="tag-row" id="drillTagRow"></div>
     <div class="drill-situation">
       <p id="drillSituation">—</p>
     </div>
@@ -1085,6 +1429,39 @@ body::before {
     <div id="favList"></div>
   </section>
 
+  <!-- PANEL 5: PLAN -->
+  <section class="panel" id="panel-plan">
+    <p class="fav-intro">
+      半年衝刺 CEFR B2，目標 Linguaskill Business 達標。<br>
+      <em>26 weeks. Four phases. From keeping quiet in meetings to running them.</em>
+    </p>
+
+    <div class="plan-hero">
+      <div class="plan-week-counter">
+        <span class="big" id="planWeekNum">—</span>
+        <span class="small">WEEK / OF 26</span>
+      </div>
+      <div class="plan-current-info">
+        <h3 id="planPhaseName">—</h3>
+        <div class="phase-meta" id="planPhaseMeta">—</div>
+        <div class="goal-text" id="planPhaseGoal">—</div>
+        <div class="skills-text" id="planPhaseSkills">—</div>
+        <div class="plan-controls">
+          <button class="btn primary" id="btnPlanStart">設定起跑日</button>
+          <button class="btn" id="btnPlanReset">重置進度</button>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="plan-phases-title">四階段路線圖 / Four Phases</h3>
+    <div class="plan-phases" id="planPhases"></div>
+
+    <div class="plan-progress-section">
+      <h3>各主題進度 / Progress by Theme</h3>
+      <div id="planProgress"></div>
+    </div>
+  </section>
+
   <footer class="doc-footer">
     <span>PAGE 01 / 01</span>
     <span class="disclaimer">本手冊不對職涯結果負任何責任。</span>
@@ -1096,10 +1473,447 @@ body::before {
 <script>
 /* ===================== DATA ===================== */
 
+const THEMES = {
+  'general':     { label: '萬用通則',  short: 'GEN',  color: '#3a3127', emoji: '◆' },
+  'time-off':    { label: '請假出缺',  short: 'PTO',  color: '#b8723a', emoji: '◆' },
+  'daily':       { label: '日常任務',  short: 'DAY',  color: '#4a6478', emoji: '◆' },
+  'meeting':     { label: '會議',      short: 'MTG',  color: '#2d6970', emoji: '◆' },
+  'cross-team':  { label: '跨部門',    short: 'X-T',  color: '#6a4d80', emoji: '◆' },
+  'managing-up': { label: '主管應對',  short: 'MGR',  color: '#a8332f', emoji: '◆' },
+  'email':       { label: 'Email',     short: 'EML',  color: '#5a6e3a', emoji: '◆' }
+};
+
+const PLAN = {
+  totalWeeks: 26,
+  phases: [
+    { id: 1, name: 'Foundation 紮根', en: 'Foundation', start: 1, end: 6,
+      cefrLabel: 'A2 鞏固 → 入門 B1',
+      themes: ['daily', 'time-off'],
+      goal: '熟悉每天 50% 場景：請假、回覆、簡短工作匯報。先把基本句型套到自動反射。',
+      skills: '聽：基本指示與請求 · 說：例行性回應 · 寫：短訊、簡訊式 email' },
+    { id: 2, name: 'Active 主動參與', en: 'Active', start: 7, end: 13,
+      cefrLabel: 'B1 穩定運作',
+      themes: ['meeting', 'cross-team'],
+      goal: '開會敢開口發言、跨部門能 reach out。重點是「克服安靜」與結構化提問。',
+      skills: '聽：多人會議、口音差異 · 說：表達同意/反對、提問、釐清 · 寫：跨部門 request email' },
+    { id: 3, name: 'Influence 影響力', en: 'Influence', start: 14, end: 20,
+      cefrLabel: 'B1+ → 跨入 B2',
+      themes: ['managing-up', 'email'],
+      goal: '能跟主管推進議題、能寫結構嚴謹的 email。語言精準度大幅提升。',
+      skills: '聽：弦外之音、語氣判讀 · 說：委婉 push back、提案 · 寫：分段論述 email、回覆 stakeholder' },
+    { id: 4, name: 'Polish 收尾', en: 'Polish', start: 21, end: 26,
+      cefrLabel: 'B2 達標',
+      themes: ['general', 'meeting', 'managing-up', 'email'],
+      goal: '整合所有主題、模擬 Linguaskill 題型、降低錯誤率。',
+      skills: 'Linguaskill 真題模擬：聽讀適性測驗、口說 1 分鐘回應、寫作 60-80 字 email + 短報告' }
+  ]
+};
+
 const PHRASES = [
+  // ============ TIME-OFF ============
+  {
+    en: "I'm not feeling well, so I'll need to take a sick day today.",
+    zh: "我不太舒服，今天需要請病假。",
+    theme: "time-off", cefr: "A2", skill: "writing",
+    context: "早上起床身體不舒服，要傳訊息／寫信給主管請病假。",
+    subtext: "標準請病假模板。「need to」比「want to」更得體——表示這是健康需求，不是偷懶。",
+    dialogue: [
+      ["You", "Hi [Manager], I'm not feeling well, so I'll need to take a sick day today. I'll be offline but reachable for anything urgent."],
+      ["Boss", "Take care, feel better soon."]
+    ]
+  },
+  {
+    en: "I'd like to request leave from May 20 to May 24.",
+    zh: "我想請從 5 月 20 日到 24 日的假。",
+    theme: "time-off", cefr: "A2", skill: "writing",
+    context: "提前申請特休／年假時的正式說法，通常用在 email 或請假系統。",
+    subtext: "「request leave」是正式用語。日期記得用 from X to Y 的格式，不要用「between」。",
+    dialogue: [
+      ["You", "Hi [Manager], I'd like to request leave from May 20 to May 24 for a family trip. I'll wrap up my pending tasks before then. Let me know if you need anything from me."],
+      ["Boss", "Approved — enjoy the trip!"]
+    ]
+  },
+  {
+    en: "I'll be out of office from Monday to Friday next week.",
+    zh: "下週一到五我會不在辦公室／休假。",
+    theme: "time-off", cefr: "A2", skill: "speaking",
+    context: "口頭跟同事預告你下週要請假，或設定 OOO 自動回信。",
+    subtext: "OOO = Out Of Office 是商務必備縮寫。常出現在自動回信主旨：「OOO until [date]」。",
+    dialogue: [
+      ["You", "Just a heads up — I'll be out of office from Monday to Friday next week. Sarah will cover urgent items."],
+      ["Coworker", "Got it, have a good break!"]
+    ]
+  },
+  {
+    en: "I'm running a bit late this morning — should be in by 10.",
+    zh: "我今天早上會晚一點到，大概 10 點到。",
+    theme: "time-off", cefr: "A2", skill: "writing",
+    context: "塞車／睡過頭／小孩耍賴，要先告訴主管你會晚到。",
+    subtext: "「a bit late」軟化遲到的衝擊。給一個具體時間（by 10）讓主管能規劃。沒給時間 = 不負責任。",
+    dialogue: [
+      ["You", "Hi team, I'm running a bit late this morning — should be in by 10. Will catch up on Slack first thing."],
+      ["Boss", "No problem, see you then."]
+    ]
+  },
+  {
+    en: "I'll be working from home today.",
+    zh: "我今天在家工作。",
+    theme: "time-off", cefr: "A2", skill: "writing",
+    context: "標準 WFH 通知。簡短一句即可。",
+    subtext: "WFH = Work From Home。多數公司現在都接受彈性工作，不用解釋原因，但加一句「reachable on Slack」會更專業。",
+    dialogue: [
+      ["You", "Quick note — I'll be working from home today. Reachable on Slack as usual."],
+      ["Coworker", "👍"]
+    ]
+  },
+  {
+    en: "Quick heads up — I'll be offline this afternoon for a doctor's appointment.",
+    zh: "先預告一下，我下午要去看醫生會離線。",
+    theme: "time-off", cefr: "B1", skill: "writing",
+    context: "中途離開幾個小時（不是請整天假）的情境。",
+    subtext: "「heads up」很地道——預告、提醒。比「I want to inform you」自然十倍。",
+    dialogue: [
+      ["You", "Quick heads up — I'll be offline from 2 to 4 this afternoon for a doctor's appointment. Will catch up after."],
+      ["Boss", "Sure, no worries."]
+    ]
+  },
+
+  // ============ DAILY WORK ============
+  {
+    en: "What are you working on today?",
+    zh: "你今天在忙什麼？",
+    theme: "daily", cefr: "A2", skill: "speaking",
+    context: "同事間的日常閒聊，或站立會議的開場。",
+    subtext: "標準回應公式：「Just finishing up X, then moving to Y.」聽起來井然有序、有掌控感。",
+    dialogue: [
+      ["A", "Hey, what are you working on today?"],
+      ["B", "Just finishing up the Q2 report, then I'll move to the client deck."],
+      ["A", "Cool, good luck."]
+    ]
+  },
+  {
+    en: "Quick update: yesterday I finished X, today I'm on Y, my blocker is Z.",
+    zh: "簡短進度：昨天完成 X，今天做 Y，卡關點是 Z。",
+    theme: "daily", cefr: "B1", skill: "speaking",
+    context: "Daily standup（每日站立會議）的標準三段式報告。",
+    subtext: "「Yesterday / Today / Blockers」是矽谷站立會議的黃金公式。記住這個結構，講話就不會散。",
+    dialogue: [
+      ["You", "Quick update: yesterday I finished the user research synthesis, today I'm drafting the proposal, my blocker is I'm waiting on data from analytics."],
+      ["Lead", "Got it — I'll ping the analytics team to speed it up."]
+    ]
+  },
+  {
+    en: "I'm a bit stuck on this — could you take a look when you get a chance?",
+    zh: "我這邊卡住了，有空可以幫我看一下嗎？",
+    theme: "daily", cefr: "B1", skill: "speaking",
+    context: "你卡關需要幫忙，但不想顯得無能或打擾人。",
+    subtext: "「a bit stuck」軟化困難程度。「when you get a chance」尊重對方時間。比「I can't do this」專業 100 倍。",
+    dialogue: [
+      ["You", "Hey, I'm a bit stuck on the API integration — could you take a look when you get a chance?"],
+      ["Coworker", "Sure, send me the error log."]
+    ]
+  },
+  {
+    en: "Could you walk me through this real quick?",
+    zh: "可以快速跟我說明一下這個嗎？",
+    theme: "daily", cefr: "B1", skill: "speaking",
+    context: "對方做的東西／流程你看不懂，需要他講解。",
+    subtext: "「walk me through」是商務萬用句——表示你想要對方逐步講解，不是只給答案。「real quick」表示你不想佔用太多時間。",
+    dialogue: [
+      ["You", "Could you walk me through this real quick? I want to make sure I understand the flow before I touch anything."],
+      ["Coworker", "Sure, let me share my screen."]
+    ]
+  },
+  {
+    en: "I've got it covered — I'll loop you in if I hit anything.",
+    zh: "這個我來處理，遇到問題會再找你。",
+    theme: "daily", cefr: "B1", skill: "speaking",
+    context: "別人關心你的工作進度，你要表達「在掌握中，不需要打擾」。",
+    subtext: "「got it covered」展現自信掌控感。「loop you in」承諾透明度——讓對方放心放手。",
+    dialogue: [
+      ["Boss", "How's the migration going?"],
+      ["You", "I've got it covered — I'll loop you in if I hit anything."],
+      ["Boss", "Sounds good."]
+    ]
+  },
+  {
+    en: "I'll have a draft over to you by end of day.",
+    zh: "我今天下班前會把初稿給你。",
+    theme: "daily", cefr: "B1", skill: "writing",
+    context: "承諾交付時間。比「I'll send it later」具體十倍。",
+    subtext: "「end of day」(EOD) 是商務必備時間錨點。其他常用：EOW (end of week), COB (close of business)。",
+    dialogue: [
+      ["Manager", "When can I see the proposal?"],
+      ["You", "I'll have a draft over to you by end of day."],
+      ["Manager", "Perfect."]
+    ]
+  },
+
+  // ============ MEETING ============
+  {
+    en: "Sorry I'm a bit late — please go ahead.",
+    zh: "抱歉我晚到了，請繼續不用等我。",
+    theme: "meeting", cefr: "A2", skill: "speaking",
+    context: "會議遲到時的開場白。",
+    subtext: "重點是「please go ahead」——告訴大家不用為你重來。比一直道歉更專業。",
+    dialogue: [
+      ["You", "Sorry I'm a bit late — please go ahead. I'll catch up."],
+      ["Host", "No worries, we're on agenda item 2."]
+    ]
+  },
+  {
+    en: "Sorry, you cut out for a second — could you repeat that?",
+    zh: "抱歉你剛剛斷訊了，可以再說一次嗎？",
+    theme: "meeting", cefr: "B1", skill: "speaking",
+    context: "視訊會議常見：對方畫面卡或聲音斷掉。",
+    subtext: "「cut out」專指「斷訊／聲音中斷」。比「I didn't hear you」更有禮貌——是把責任推給網路而不是你沒在聽。",
+    dialogue: [
+      ["Coworker", "...so we should ship by Friday."],
+      ["You", "Sorry, you cut out for a second — could you repeat that last part?"],
+      ["Coworker", "I said we should ship by Friday."]
+    ]
+  },
+  {
+    en: "Just to make sure I understood correctly...",
+    zh: "我確認一下我有沒有聽懂......",
+    theme: "meeting", cefr: "B1", skill: "speaking",
+    context: "重述對方剛剛講的，確認你的理解正確。",
+    subtext: "黃金句型，後面接「you're saying that...」。除了確認，還暗示對方：「請再次確認你的承諾」。",
+    dialogue: [
+      ["Client", "We need this delivered by Q3."],
+      ["You", "Just to make sure I understood correctly — you're saying the hard deadline is end of September, right?"],
+      ["Client", "Correct."]
+    ]
+  },
+  {
+    en: "Can I jump in here?",
+    zh: "我可以插話嗎？",
+    theme: "meeting", cefr: "B1", skill: "speaking",
+    context: "別人在講話但你有重點要補充／反駁，需要禮貌切入。",
+    subtext: "「jump in」就是「插話」的禮貌說法。會議中要懂得搶 floor，不然你的想法永遠出不來。",
+    dialogue: [
+      ["Speaker", "...and that's why we need three more engineers."],
+      ["You", "Can I jump in here? I think we should look at the data before adding headcount."],
+      ["Host", "Go ahead."]
+    ]
+  },
+  {
+    en: "I'd like to build on what Sarah just said.",
+    zh: "我想延伸 Sarah 剛剛的觀點。",
+    theme: "meeting", cefr: "B2", skill: "speaking",
+    context: "你想接著別人的觀點繼續發揮（而不是反駁）。",
+    subtext: "「build on」是高段位動作——讓對方覺得被認可，同時你也佔到發言空間。經典外商會議技巧。",
+    dialogue: [
+      ["Sarah", "I think we need to prioritize quality over speed."],
+      ["You", "I'd like to build on what Sarah just said — quality issues now will cost us 10x more in support tickets later."],
+      ["Sarah", "Exactly."]
+    ]
+  },
+  {
+    en: "I see your point, but I'd push back on that.",
+    zh: "我了解你的意思，但我不太認同。",
+    theme: "meeting", cefr: "B2", skill: "speaking",
+    context: "你想反對某人的觀點但不想撕破臉。",
+    subtext: "三段式得體反對：(1) 承認對方的點 (2) 「但是」 (3) 反對。「push back」是商務界最常用的「反對」說法。",
+    dialogue: [
+      ["Coworker", "We should just outsource the whole thing."],
+      ["You", "I see your point, but I'd push back on that — we'd lose institutional knowledge."],
+      ["Coworker", "Fair point."]
+    ]
+  },
+  {
+    en: "Just so I'm tracking — what's the action item here?",
+    zh: "我整理一下——這邊的待辦事項是什麼？",
+    theme: "meeting", cefr: "B1", skill: "speaking",
+    context: "會議發散得很厲害，你想拉回具體結論。",
+    subtext: "「tracking」= 跟上進度。這句話也是禮貌地暗示主持人：「拜託，我們在浪費時間」。",
+    dialogue: [
+      ["Host", "...so there are many considerations here."],
+      ["You", "Just so I'm tracking — what's the action item, and who owns it?"],
+      ["Host", "Good question. Let's say I'll draft the proposal by Friday."]
+    ]
+  },
+  {
+    en: "I have a hard stop at the top of the hour.",
+    zh: "我整點要硬下線（因為下個會議）。",
+    theme: "meeting", cefr: "B1", skill: "speaking",
+    context: "會議快結束但話題還沒收尾，你必須離開去下個會議。",
+    subtext: "「hard stop」= 不可協商的停止點。「top of the hour」= 整點。商務必備兩個短語。",
+    dialogue: [
+      ["Host", "Let's keep going for another 15 minutes."],
+      ["You", "Just a heads up — I have a hard stop at the top of the hour. Could we lock in the decisions before then?"],
+      ["Host", "Yes, let's wrap up."]
+    ]
+  },
+  {
+    en: "Could we come back to that? I'd like to keep us on agenda.",
+    zh: "這個之後再回來討論？我們先照議程走。",
+    theme: "meeting", cefr: "B2", skill: "speaking",
+    context: "有人開始扯遠了，你想拉回主軸（特別是當你是主持人時）。",
+    subtext: "「keep us on agenda」是禮貌的「閉嘴」——把焦點拉回議程，不點名指責。",
+    dialogue: [
+      ["Coworker", "...which reminds me of last quarter's budget issue..."],
+      ["You", "Could we come back to that? I'd like to keep us on agenda — we still need to cover items 3 and 4."],
+      ["Coworker", "Sure."]
+    ]
+  },
+
+  // ============ CROSS-TEAM ============
+  {
+    en: "Hi, I'm reaching out from the Product team — wondering if you could help with something.",
+    zh: "你好，我是產品部的，想看看你能不能幫個忙。",
+    theme: "cross-team", cefr: "B1", skill: "writing",
+    context: "第一次跨部門連絡某人時的開場白。",
+    subtext: "「reaching out」= 主動聯絡。「wondering if」= 軟化請求，不顯得理所當然。經典外商開場。",
+    dialogue: [
+      ["You", "Hi Lisa, I'm reaching out from the Product team — wondering if you could help with something on the legal review side?"],
+      ["Lisa", "Sure, what's up?"]
+    ]
+  },
+  {
+    en: "We've noticed something on our end and wanted to flag it.",
+    zh: "我們這邊發現一個狀況，想跟你提一下。",
+    theme: "cross-team", cefr: "B1", skill: "writing",
+    context: "跨部門通報問題。比直接說「你們做錯了」軟很多。",
+    subtext: "「on our end」= 我們這邊（不是你們那邊）。「flag」= 提出來讓對方注意。中性、不指責。",
+    dialogue: [
+      ["You", "Hey, we've noticed something on our end and wanted to flag it — the API response times have been spiking since yesterday."],
+      ["Engineer", "Thanks for flagging — let me investigate."]
+    ]
+  },
+  {
+    en: "Who would be the best person to talk to about this?",
+    zh: "這件事我應該找誰談比較好？",
+    theme: "cross-team", cefr: "A2", skill: "speaking",
+    context: "你不知道某事該找誰處理，想問內部人脈。",
+    subtext: "問對人是辦事第一步。這句話的關鍵是「best」——表示你尊重對方判斷，不是隨便抓一個。",
+    dialogue: [
+      ["You", "Who would be the best person to talk to about vendor procurement?"],
+      ["Coworker", "That'd be Mark in finance."]
+    ]
+  },
+  {
+    en: "Happy to support — what would you need from us?",
+    zh: "我們很樂意配合——你需要我們提供什麼？",
+    theme: "cross-team", cefr: "B1", skill: "speaking",
+    context: "其他部門找你幫忙，你願意配合，但要先確認對方需求。",
+    subtext: "「Happy to」開場很正面。後半段是高招——把球踢回去問對方要什麼，避免你猜錯方向白做工。",
+    dialogue: [
+      ["Other team", "We need help on the launch."],
+      ["You", "Happy to support — what would you need from us specifically? Resources, review, sign-off?"],
+      ["Other team", "Mainly review and sign-off."]
+    ]
+  },
+
+  // ============ MANAGING-UP ============
+  {
+    en: "Could we grab 15 minutes to discuss something?",
+    zh: "可以撥 15 分鐘聊一下嗎？",
+    theme: "managing-up", cefr: "B1", skill: "speaking",
+    context: "你需要跟主管私下聊一件事——不適合在 group chat 講的。",
+    subtext: "「grab」= 抓住、占用（口語）。「15 minutes」具體又短，主管很難拒絕。比「Can we talk?」（聽起來像要分手）好很多。",
+    dialogue: [
+      ["You", "Hey [Manager], could we grab 15 minutes today to discuss something?"],
+      ["Manager", "Sure, 3pm work?"]
+    ]
+  },
+  {
+    en: "I wanted to flag a concern about the timeline.",
+    zh: "我想提出一個關於時程的擔憂。",
+    theme: "managing-up", cefr: "B2", skill: "speaking",
+    context: "你覺得計畫有問題，但要在升級成災難前先提醒主管。",
+    subtext: "「flag a concern」是商務界最得體的「我覺得這會出事」。先 flag 留下紀錄，未來真的出事，你已經盡到責任。",
+    dialogue: [
+      ["You", "Before we proceed, I wanted to flag a concern about the timeline — Q3 is tight given the current scope."],
+      ["Manager", "Tell me more."]
+    ]
+  },
+  {
+    en: "I'd appreciate your input on this before I move ahead.",
+    zh: "在我繼續做之前，希望聽聽你的意見。",
+    theme: "managing-up", cefr: "B1", skill: "writing",
+    context: "你做了個東西，需要主管 review／拍板才敢往下做。",
+    subtext: "「I'd appreciate」= 我會感激（很客氣）。「before I move ahead」明確表示你卡在這裡等他。",
+    dialogue: [
+      ["You", "Hi [Manager], I've drafted the proposal — I'd appreciate your input on this before I move ahead."],
+      ["Manager", "Will review by tomorrow."]
+    ]
+  },
+  {
+    en: "I've been feeling a bit stretched — could we talk about prioritization?",
+    zh: "我最近有點負荷過重——可以聊一下優先順序嗎？",
+    theme: "managing-up", cefr: "B2", skill: "speaking",
+    context: "你工作太多快爆了，要跟主管談——但不能聽起來像在抱怨。",
+    subtext: "重點是把問題包裝成「優先順序」而不是「我抱怨」。讓主管當決策者：他選擇放掉哪件事，你不用扛責任。",
+    dialogue: [
+      ["You", "I've been feeling a bit stretched — could we talk about prioritization? I'd like to align on what's most important."],
+      ["Manager", "Yes, let's do that this week."]
+    ]
+  },
+  {
+    en: "What would success look like for this project?",
+    zh: "這個專案成功的樣貌是什麼？",
+    theme: "managing-up", cefr: "B2", skill: "speaking",
+    context: "拿到一個新任務時，問清楚交付標準。",
+    subtext: "高段位提問。讓主管自己定義成功——之後不會出現「我以為你是要 A 但你交了 B」的災難。",
+    dialogue: [
+      ["You", "Before I dive in — what would success look like for this project? What does \"done\" mean to you?"],
+      ["Manager", "Great question. Let me think..."]
+    ]
+  },
+  {
+    en: "Just looking for your sign-off before I send this out.",
+    zh: "想請你拍板，我才會寄出去。",
+    theme: "managing-up", cefr: "B1", skill: "writing",
+    context: "你做了個對外文件，等主管 OK 才能寄出。",
+    subtext: "「sign-off」= 正式批准（商務必備字）。「send out」表示對外。讓主管知道：他不點頭你就不行動。",
+    dialogue: [
+      ["You", "Hi [Manager], the press release is ready — just looking for your sign-off before I send this out."],
+      ["Manager", "Looks good, you can send."]
+    ]
+  },
+
+  // ============ EMAIL ============
+  {
+    en: "Hope you're doing well — quick question about...",
+    zh: "希望你最近都好——想快速請教一下......",
+    theme: "email", cefr: "A2", skill: "writing",
+    context: "Email 標準開場，後面接你的提問。",
+    subtext: "外國人寫 email 一定要寒暄一下。「Hope you're doing well」是萬用安全的開場，特別適合不熟的人。",
+    dialogue: [
+      ["You", "Hi Mark, hope you're doing well — quick question about the contract terms. Are we still on a 12-month agreement, or did that change?"],
+      ["Mark", "Still 12 months, no changes."]
+    ]
+  },
+  {
+    en: "Per my last email...",
+    zh: "如同我先前那封信所述......",
+    theme: "email", cefr: "B1", skill: "writing",
+    context: "對方問了你信裡明明寫過的事，你想（禮貌地）打他的臉。",
+    subtext: "中文版：你他X的有沒有在看信？但披著禮貌的外衣，且留下證據。",
+    dialogue: [
+      ["Coworker", "Wait, when's the deadline again?"],
+      ["You", "Per my last email (sent Tuesday), it's this Friday EOD."],
+      ["Coworker", "Got it, thanks!"]
+    ]
+  },
+  {
+    en: "Just bumping this up your inbox.",
+    zh: "把這封信往上頂一下，提醒你看一下。",
+    theme: "email", cefr: "B1", skill: "writing",
+    context: "你寄了信沒人回。第二次寄。第三次寄。",
+    subtext: "極度禮貌的「我要崩潰了你到底要不要回我」。「bumping up」假裝是信被埋沒不是對方懶得回。",
+    dialogue: [
+      ["You", "Hi! Just bumping this up your inbox in case it got buried. Looking forward to your thoughts."],
+      ["Reply", "Sorry, totally missed it. Replying now."]
+    ]
+  },
+
+  // ============ GENERAL (existing classics) ============
   {
     en: "Let's circle back on this.",
     zh: "我們之後再聊這件事。",
+    theme: "general", cefr: "B1", skill: "speaking",
     context: "會議快結束、討論卡住、或你不想當下做決定時的萬用脫身術。",
     subtext: "翻譯：我希望這件事自然消失。如果你下次再問起，我會假裝不記得有講過。",
     dialogue: [
@@ -1109,52 +1923,9 @@ const PHRASES = [
     ]
   },
   {
-    en: "Per my last email...",
-    zh: "如同我先前那封信所述......",
-    context: "當對方問了一個你信裡明明寫得清清楚楚的問題時。",
-    subtext: "中文版：你他X的有沒有在看信？但披著禮貌的外衣，且留下證據。",
-    dialogue: [
-      ["A", "Wait, when's the deadline again?"],
-      ["B", "Per my last email (sent Tuesday, 9:42am), it's this Friday EOD."],
-      ["A", "Got it, thanks!（被打臉）"]
-    ]
-  },
-  {
-    en: "Just a gentle reminder...",
-    zh: "溫馨提醒一下......",
-    context: "對方拖太久沒回覆，你需要催，但又不想顯得太凶。",
-    subtext: "「gentle」三秒前還很 gentle，三秒後可以升級成 firm reminder、final reminder、然後 cc 你主管。",
-    dialogue: [
-      ["A", "Just a gentle reminder that the report was due yesterday."],
-      ["B", "Oh sorry, I'll get to it!"],
-      ["A", "（三天後）Following up on my gentle reminder..."]
-    ]
-  },
-  {
-    en: "Could you loop me in on this?",
-    zh: "可以把我加進這個討論嗎？",
-    context: "你想知道某件事的進度／決策，但又不想顯得在打探。",
-    subtext: "中性偏正面的說法。但如果你 loop 進主管 = 你準備升級事件了。",
-    dialogue: [
-      ["A", "We're working out the new vendor contract."],
-      ["B", "Could you loop me in on the email thread? I want to stay updated."],
-      ["A", "Sure, adding you now."]
-    ]
-  },
-  {
-    en: "Let's take this offline.",
-    zh: "我們會後私下聊。",
-    context: "會議中，某個話題突然偏了 / 太敏感 / 你不想在這麼多人面前處理。",
-    subtext: "意思是：「閉嘴，不要在這個會議上繼續講這個。」很多時候，offline 永遠不會發生。",
-    dialogue: [
-      ["A", "But why did marketing get a bigger budget than us?"],
-      ["B", "Good point — let's take this offline and discuss it after the meeting."],
-      ["A", "（會後杳無音訊）"]
-    ]
-  },
-  {
     en: "I don't have the bandwidth right now.",
     zh: "我目前沒有餘力處理這個。",
+    theme: "general", cefr: "B1", skill: "speaking",
     context: "委婉拒絕額外工作。比 \"I'm too busy\" 更專業、更難拒絕。",
     subtext: "Bandwidth = 頻寬，這裡比喻你的精力／時間配額。重點是把問題包裝成「容量」而不是「意願」。",
     dialogue: [
@@ -1164,32 +1935,10 @@ const PHRASES = [
     ]
   },
   {
-    en: "I'll take a look and get back to you.",
-    zh: "我看一下再回覆你。",
-    context: "對方拋給你一個問題，你還沒準備好回答（或不想回答）。",
-    subtext: "標準延遲術。常見 follow-up 時程：當天 → 三天後 → 一週後 → 你裝忘了。",
-    dialogue: [
-      ["A", "Can you check if the numbers add up?"],
-      ["B", "Sure, let me take a look and get back to you."],
-      ["A", "Great, by EOD?"],
-      ["B", "...by EO-week."]
-    ]
-  },
-  {
-    en: "Just bumping this up your inbox.",
-    zh: "這封信往上頂一下，提醒你看一下。",
-    context: "你寄了信沒人回。第二次寄。第三次寄。",
-    subtext: "極度禮貌的「我要崩潰了你到底要不要回我」。每 bump 一次，怒氣 +1。",
-    dialogue: [
-      ["A", "Hi! Just bumping this up your inbox in case it got buried."],
-      ["B", "Oh! Sorry, totally missed it. Replying now."],
-      ["A", "（你他媽明明已讀了）"]
-    ]
-  },
-  {
     en: "Thanks for flagging this.",
     zh: "謝謝你提出來／謝謝你提醒。",
-    context: "別人指出一個問題時的標準回應，無論你內心覺得是大事還小事。",
+    theme: "general", cefr: "B1", skill: "speaking",
+    context: "別人指出一個問題時的標準回應。",
     subtext: "中性詞。可以是真心感謝，也可以是「我知道這件事鬧大了，先給你一個正面回應」。",
     dialogue: [
       ["A", "I noticed the report has the wrong numbers in section 3."],
@@ -1198,268 +1947,302 @@ const PHRASES = [
     ]
   },
   {
-    en: "Just to align on this...",
-    zh: "只是想對一下我們的想法／確認一下方向......",
-    context: "你想確認大家想的是同一件事，避免之後做白工。",
-    subtext: "Align = 對齊。聽起來很合作，但常常是「我懷疑你跟我想的不一樣，先講清楚」。",
-    dialogue: [
-      ["A", "Just to align on this — we're targeting end of March for launch, right?"],
-      ["B", "Yes, end of March."],
-      ["A", "（先留下證據，免得你之後改口）"]
-    ]
-  },
-  {
-    en: "I'll defer to your judgment.",
-    zh: "我尊重你的判斷／聽你的。",
-    context: "你不想為這個決定負責，把球丟回給對方。",
-    subtext: "聽起來是給對方面子，實際上是脫身術。日後出事，你可以說「當時你決定的呀」。",
-    dialogue: [
-      ["A", "Should we go with vendor A or B?"],
-      ["B", "I'll defer to your judgment — you've worked with them more closely."],
-      ["A", "（你不想負責對吧）"]
-    ]
-  },
-  {
-    en: "I have some thoughts.",
-    zh: "我有一些想法。",
-    context: "你看到一個方案，覺得不行，但又不想當場吵起來。",
-    subtext: "翻譯：我覺得這個東西有問題，而且問題不小。請做好心理準備。",
-    dialogue: [
-      ["A", "Here's the new pitch deck."],
-      ["B", "Cool... I have some thoughts. Want to grab 15 minutes?"],
-      ["A", "（完蛋了。）"]
-    ]
-  },
-  {
-    en: "Going forward, let's make sure...",
-    zh: "之後我們要確保......",
+    en: "Going forward, let's make sure we double-check before sending.",
+    zh: "之後我們要確保寄出前先複查。",
+    theme: "general", cefr: "B1", skill: "speaking",
     context: "事情已經出包，你不想直接點名指責，但要確保下次不會再發生。",
-    subtext: "委婉指正模板。「going forward」= 我不打算追究這次，但下次不要再來這套。",
+    subtext: "「going forward」= 我不打算追究這次，但下次不要再來這套。委婉指正模板。",
     dialogue: [
-      ["A", "Sorry the file got sent to the wrong client."],
-      ["B", "It's okay this time — going forward, let's make sure we double-check the recipient."],
-      ["A", "Understood, won't happen again."]
-    ]
-  },
-  {
-    en: "Let's park this for now.",
-    zh: "這個先暫時擱置。",
-    context: "討論卡住、優先順序不對、或大家都累了。",
-    subtext: "Park = 停車。停在哪？停車場深處。通常一停就是永遠。",
-    dialogue: [
-      ["A", "Should we redesign the entire onboarding flow?"],
-      ["B", "Big question — let's park this for now and revisit next quarter."],
-      ["A", "（park 進無底洞）"]
-    ]
-  },
-  {
-    en: "Could we sync on this briefly?",
-    zh: "可以快速同步一下嗎？",
-    context: "你需要當面（或視訊）跟對方對齊一件事，書面說不清楚。",
-    subtext: "「briefly」是禮貌詞，實際上常常 sync 一小時。Sync 也常是「你做的那個東西有問題，我們得談談」的前奏。",
-    dialogue: [
-      ["A", "Could we sync briefly on the design decisions?"],
-      ["B", "Sure, 15 mins?"],
-      ["A", "（90 分鐘後仍在開會）"]
+      ["Subordinate", "Sorry the file got sent to the wrong client."],
+      ["You", "It's okay this time — going forward, let's make sure we double-check the recipient."],
+      ["Subordinate", "Understood."]
     ]
   },
   {
     en: "Noted.",
     zh: "收到。",
+    theme: "general", cefr: "A2", skill: "writing",
     context: "你聽到了對方說的話，但不想多回應。",
     subtext: "極簡萬用詞。可以是真心收到，也可以是「我聽到了但我不一定會做」。語氣全靠上下文。",
     dialogue: [
-      ["A", "Please send your weekly reports by Friday from now on."],
-      ["B", "Noted."],
-      ["A", "（這個 noted 到底是 yes 還是 fuck off？）"]
+      ["Boss", "Please send your weekly reports by Friday from now on."],
+      ["You", "Noted."]
     ]
   },
   {
-    en: "I appreciate your perspective.",
-    zh: "我了解你的角度。",
-    context: "對方提了一個你不同意的看法，你想表達「我聽到了」但不想接受。",
-    subtext: "翻譯：你的意見我聽到了，但我不會採納。常常後面接一個「however」或「that said」。",
+    en: "Let's take this offline.",
+    zh: "我們會後私下聊。",
+    theme: "general", cefr: "B1", skill: "speaking",
+    context: "會議中某個話題突然偏了或太敏感，你想關掉這個話題。",
+    subtext: "意思是：「閉嘴，不要在這個會議上繼續講這個。」很多時候，offline 永遠不會發生。",
     dialogue: [
-      ["A", "I think we should redesign the homepage."],
-      ["B", "I appreciate your perspective. That said, our research shows users don't have issues with the current design."],
-      ["A", "（被軟釘子釘住）"]
-    ]
-  },
-  {
-    en: "Let me know if I'm missing anything.",
-    zh: "如果我有遺漏什麼，請告訴我。",
-    context: "你寄了一封看似完整的信／報告，給自己一個保險。",
-    subtext: "禮貌的 \"I'm done, your turn\"。同時把球踢回對方：要是你發現問題，是你沒講；不發現，那就視同同意。",
-    dialogue: [
-      ["A", "Attached is the final draft. Let me know if I'm missing anything!"],
-      ["B", "Looks good!"],
-      ["A", "（已留下「你說 OK 的」證據）"]
-    ]
-  },
-  {
-    en: "Just to double-check...",
-    zh: "我再確認一下......",
-    context: "你心裡覺得對方搞錯了，但不想直接說「你錯了」。",
-    subtext: "委婉糾錯模板。「double-check」表面上是自己再確認，實際上是讓對方自己發現問題。",
-    dialogue: [
-      ["A", "I'll send the invoice to accounting@..."],
-      ["B", "Just to double-check — isn't the new email finance@... since last month?"],
-      ["A", "Oh right! Thanks for catching that."]
-    ]
-  },
-  {
-    en: "Happy to chat further if helpful.",
-    zh: "如果有幫助的話，很樂意再聊。",
-    context: "信件結尾的萬用句，禮貌且開放。",
-    subtext: "中性詞，但「if helpful」三個字超有距離感——意思是「我不會主動約你，是你想要才約」。",
-    dialogue: [
-      ["A", "Hope this helps! Happy to chat further if helpful."],
-      ["B", "Thanks, will reach out if needed."],
-      ["A", "（雙方都不會主動）"]
+      ["A", "But why did marketing get a bigger budget than us?"],
+      ["B", "Good point — let's take this offline and discuss it after the meeting."]
     ]
   }
 ];
 
 const DECODER = [
-  { said: "Let's circle back", saidZh: "我們之後再回來討論", meant: "我希望這件事被遺忘" },
-  { said: "Per my last email", saidZh: "如同我上一封信", meant: "你他媽根本沒看信" },
-  { said: "As discussed...", saidZh: "如同先前所討論的", meant: "我要在這裡留下白紙黑字的證據" },
-  { said: "Friendly reminder", saidZh: "友善提醒", meant: "你他X的拖太久了" },
-  { said: "Just checking in", saidZh: "我來關心一下進度", meant: "為什麼還沒做完？" },
-  { said: "Let's take this offline", saidZh: "我們會後再聊", meant: "閉嘴，別在這裡講" },
-  { said: "Interesting perspective", saidZh: "有趣的觀點", meant: "我完全不同意，但今天懶得吵" },
-  { said: "We should sync soon", saidZh: "我們應該對一下", meant: "你做的東西有問題，得談談" },
-  { said: "When you get a chance", saidZh: "等你有空時", meant: "現在，立刻，馬上" },
-  { said: "Looping in [boss]", saidZh: "把主管加進來", meant: "我要升級這件事，準備好" },
-  { said: "Just to clarify...", saidZh: "我釐清一下", meant: "你完全搞錯了" },
-  { said: "Noted", saidZh: "收到", meant: "我聽到了，但會不會做是另一回事" },
-  { said: "Thanks for flagging", saidZh: "謝謝你提出來", meant: "感謝你終於發現了這個問題" },
-  { said: "Let's park this", saidZh: "這個先擱置", meant: "我們永遠不會回頭看了" },
-  { said: "Going forward...", saidZh: "之後我們要......", meant: "之前都搞錯了，從現在起別再來這套" },
-  { said: "Bandwidth issues", saidZh: "頻寬不夠（沒空）", meant: "我不想做" },
-  { said: "I have some thoughts", saidZh: "我有一些想法", meant: "我覺得這完全是垃圾" },
-  { said: "Bold decision", saidZh: "勇敢的決定", meant: "你瘋了" },
-  { said: "I appreciate your input", saidZh: "謝謝你的意見", meant: "你的意見我聽到了，但不重要" },
-  { said: "Let's regroup", saidZh: "我們重新討論", meant: "第一輪沒成功，我們再試一次" },
-  { said: "I'll take a look", saidZh: "我會看一下", meant: "我會看，但不保證何時" },
-  { said: "Touching base", saidZh: "聊一下進度", meant: "你還活著嗎？事情做了沒？" },
-  { said: "Quick question...", saidZh: "我問個快速的問題", meant: "這個問題會耗掉你 20 分鐘" },
-  { said: "Apologies for the delay", saidZh: "抱歉延遲了", meant: "我把你信丟在收件匣兩週了，現在才回" },
-  { said: "Per our previous discussion", saidZh: "如同先前討論", meant: "我們講過了，你別再亂講話" },
-  { said: "I hear you", saidZh: "我聽到你了", meant: "我聽到了，但不會改變任何事" },
-  { said: "FYI", saidZh: "供參考", meant: "我要把責任甩給你了" },
-  { said: "Just my two cents", saidZh: "我的一點淺見", meant: "我接下來要長篇大論說教" },
-  { said: "No worries if not!", saidZh: "沒做也沒關係！", meant: "你最好給我做" },
-  { said: "Open to feedback", saidZh: "歡迎建議", meant: "請給我正面回饋" }
+  { said: "Let's circle back", saidZh: "我們之後再回來討論", meant: "我希望這件事被遺忘", theme: "meeting" },
+  { said: "Per my last email", saidZh: "如同我上一封信", meant: "你他媽根本沒看信", theme: "email" },
+  { said: "As discussed...", saidZh: "如同先前所討論的", meant: "我要在這裡留下白紙黑字的證據", theme: "email" },
+  { said: "Friendly reminder", saidZh: "友善提醒", meant: "你他X的拖太久了", theme: "email" },
+  { said: "Just checking in", saidZh: "我來關心一下進度", meant: "為什麼還沒做完？", theme: "managing-up" },
+  { said: "Let's take this offline", saidZh: "我們會後再聊", meant: "閉嘴，別在這裡講", theme: "meeting" },
+  { said: "Interesting perspective", saidZh: "有趣的觀點", meant: "我完全不同意，但今天懶得吵", theme: "meeting" },
+  { said: "We should sync soon", saidZh: "我們應該對一下", meant: "你做的東西有問題，得談談", theme: "managing-up" },
+  { said: "When you get a chance", saidZh: "等你有空時", meant: "現在，立刻，馬上", theme: "managing-up" },
+  { said: "Looping in [boss]", saidZh: "把主管加進來", meant: "我要升級這件事，準備好", theme: "cross-team" },
+  { said: "Just to clarify...", saidZh: "我釐清一下", meant: "你完全搞錯了", theme: "meeting" },
+  { said: "Noted", saidZh: "收到", meant: "我聽到了，但會不會做是另一回事", theme: "general" },
+  { said: "Thanks for flagging", saidZh: "謝謝你提出來", meant: "感謝你終於發現了這個問題", theme: "general" },
+  { said: "Let's park this", saidZh: "這個先擱置", meant: "我們永遠不會回頭看了", theme: "meeting" },
+  { said: "Going forward...", saidZh: "之後我們要......", meant: "之前都搞錯了，從現在起別再來這套", theme: "managing-up" },
+  { said: "Bandwidth issues", saidZh: "頻寬不夠（沒空）", meant: "我不想做", theme: "general" },
+  { said: "I have some thoughts", saidZh: "我有一些想法", meant: "我覺得這完全是垃圾", theme: "meeting" },
+  { said: "Bold decision", saidZh: "勇敢的決定", meant: "你瘋了", theme: "managing-up" },
+  { said: "I appreciate your input", saidZh: "謝謝你的意見", meant: "你的意見我聽到了，但不重要", theme: "meeting" },
+  { said: "Let's regroup", saidZh: "我們重新討論", meant: "第一輪沒成功，我們再試一次", theme: "meeting" },
+  { said: "I'll take a look", saidZh: "我會看一下", meant: "我會看，但不保證何時", theme: "general" },
+  { said: "Touching base", saidZh: "聊一下進度", meant: "你還活著嗎？事情做了沒？", theme: "managing-up" },
+  { said: "Quick question...", saidZh: "我問個快速的問題", meant: "這個問題會耗掉你 20 分鐘", theme: "general" },
+  { said: "Apologies for the delay", saidZh: "抱歉延遲了", meant: "我把你信丟在收件匣兩週了，現在才回", theme: "email" },
+  { said: "I hear you", saidZh: "我聽到你了", meant: "我聽到了，但不會改變任何事", theme: "meeting" },
+  { said: "FYI", saidZh: "供參考", meant: "我要把責任甩給你了", theme: "email" },
+  { said: "No worries if not!", saidZh: "沒做也沒關係！", meant: "你最好給我做", theme: "general" },
+  { said: "Open to feedback", saidZh: "歡迎建議", meant: "請給我正面回饋", theme: "managing-up" },
+  // NEW themed entries
+  { said: "Let's reconvene", saidZh: "我們再開一次會", meant: "這個會等於沒開，再來一次", theme: "meeting" },
+  { said: "Stretch goal", saidZh: "挑戰目標", meant: "幾乎不可能但你還是要嘗試", theme: "managing-up" },
+  { said: "Low-hanging fruit", saidZh: "容易達成的目標", meant: "簡單的事先做完讓報表好看", theme: "general" },
+  { said: "Let's align offline", saidZh: "私下對齊一下", meant: "我們意見相左，但別在這裡吵", theme: "cross-team" },
+  { said: "I'll take that as an action item", saidZh: "我把這個當成行動項目", meant: "我什麼時候會做不知道", theme: "meeting" },
+  { said: "Per our conversation", saidZh: "如同我們討論的", meant: "你最好沒忘記我講過的話", theme: "email" },
+  { said: "Reaching out to see if...", saidZh: "想詢問一下......", meant: "我有事要拜託你", theme: "cross-team" },
+  { said: "I'd like to revisit this", saidZh: "我想重新討論這個", meant: "上次的決定我不滿意", theme: "meeting" },
+  { said: "Thoughts?", saidZh: "有想法嗎？", meant: "請給我意見，最好是同意", theme: "managing-up" },
+  { said: "Best, [name]", saidZh: "祝好，[名字]", meant: "信件結尾的萬用安全敬辭", theme: "email" },
+  { said: "Kind regards", saidZh: "謹致", meant: "比 Best 正式一點，初次往來常用", theme: "email" },
+  { said: "ETA?", saidZh: "預計什麼時候完成？", meant: "你到底什麼時候要交（語氣不耐煩）", theme: "managing-up" },
+  { said: "Could use your help", saidZh: "可能需要你的協助", meant: "拜託，救我", theme: "cross-team" },
+  { said: "Heads up", saidZh: "提前告知", meant: "預警一下，你要有心理準備", theme: "general" },
+  { said: "On my plate", saidZh: "我的盤子上（手上的事）", meant: "我手上一堆事在做", theme: "daily" },
+  { said: "Drop the ball", saidZh: "把球掉了", meant: "搞砸、漏掉、忘記做", theme: "daily" },
+  { said: "Crunch time", saidZh: "緊繃時刻", meant: "死線將至，全員加班", theme: "daily" }
 ];
 
 const DRILLS = [
+  // ============ TIME-OFF ============
   {
-    situation: "主管在週五下午 5:50 在 Slack 傳訊息：「Hey, can you look into the Q3 numbers tonight?」你不想加班，但也不想直接拒絕。最得體的回應是？",
+    theme: "time-off", cefr: "A2",
+    situation: "你早上醒來感冒了，要請病假，但你今天剛好有跟客戶的重要會議。最得體的訊息是？",
+    options: [
+      { text: "I'm sick today.", correct: false, why: "太短促，且沒提到客戶會議——這正是主管最關心的。" },
+      { text: "Hi [Manager], I've come down with something and won't be able to come in today. I know I have the client call at 2pm — I can either join briefly from home, or I can hand it off to Sarah. Let me know your preference.", correct: true, why: "三段式專業請病假：(1) 報告狀況 (2) 主動提及衝突 (3) 提供兩個解方讓主管選。展現 ownership 而不是丟包。" },
+      { text: "Sorry I can't make it today, hope someone can cover for me.", correct: false, why: "「hope someone」太被動。要主動指定／提議對象，不能讓主管自己想辦法。" },
+      { text: "I might be sick, not sure if I'll come in.", correct: false, why: "不確定的訊息會讓主管難規劃。要嘛來、要嘛不來，明確一點。" }
+    ]
+  },
+  {
+    theme: "time-off", cefr: "B1",
+    situation: "你想請兩週連假去歐洲，要寫信給主管。你提前一個月通知，要怎麼寫得最容易被批准？",
+    options: [
+      { text: "I want to take two weeks off in June.", correct: false, why: "太命令句。「I want」聽起來像理所當然，不像在請求。" },
+      { text: "Hi [Manager], I'd like to request leave from June 10 to June 21 for a trip to Europe. I'll make sure all my projects are on track before I go and will brief Mark on anything pending. Happy to discuss if any concerns.", correct: true, why: "完整模板：(1) 正式請求 + 具體日期 (2) 主動提及交接安排 (3) 留討論空間。讓主管覺得你都想好了，他只要按 approve。" },
+      { text: "Can I have 2 weeks off please? Thanks.", correct: false, why: "太隨便。長假請求需要正式格式：日期、原因（簡述）、交接計畫。" },
+      { text: "I'll be on vacation June 10-21, FYI.", correct: false, why: "「FYI」+ 既定事實的語氣，等於沒在請求是在通知。可能會踩到主管權威的雷。" }
+    ]
+  },
+  {
+    theme: "time-off", cefr: "B2",
+    situation: "你休假第三天，主管在 Slack 傳訊息問一個工作問題。你不想破壞假期但也不想得罪他。",
+    options: [
+      { text: "（不回，假裝沒看到）", correct: false, why: "Slack 顯示你已讀。裝沒看到反而留下不可靠的印象。" },
+      { text: "Sure, here's the answer: [詳細回覆]", correct: false, why: "你回了 = 接下來整個假期他都會繼續問。不要建立這個先例。" },
+      { text: "Hi [Manager], I'm currently on PTO until Friday — happy to address this when I'm back, or if it's truly time-sensitive, Mark should be able to help in the meantime. Let me know.", correct: true, why: "完美三段式：(1) 提醒對方你在休假（不指責但設邊界）(2) 提供回來後處理的承諾 (3) 給急件的替代方案。把球踢回去讓主管自己決定要不要打擾你的假期。" },
+      { text: "I'm on vacation, please don't bother me.", correct: false, why: "事實正確但語氣硬。職場上要把邊界包裝得體一點。" }
+    ]
+  },
+
+  // ============ DAILY ============
+  {
+    theme: "daily", cefr: "B1",
+    situation: "Daily standup 時，你昨天進度其實不多，今天計畫也還沒想好。要怎麼報告？",
+    options: [
+      { text: "Yesterday I didn't do much, today I'm not sure yet.", correct: false, why: "誠實但毀滅性。會讓團隊覺得你沒在做事。" },
+      { text: "Yesterday I made progress on the research review and started drafting the proposal. Today I'll continue the draft and aim to share a first version by EOD. No blockers.", correct: true, why: "把模糊的「在做事」用具體動詞包裝起來：「made progress on」「started drafting」。給今天一個明確 deliverable（first version by EOD），即使你還沒想清楚。標準矽谷 standup 模板。" },
+      { text: "Same as yesterday, still working on the same stuff.", correct: false, why: "聽起來毫無進展。即使真的進度慢，也要重新切片描述讓它聽起來在動。" },
+      { text: "I'll send a written update later.", correct: false, why: "Standup 的重點就是當場同步。延後 = 拒絕。" }
+    ]
+  },
+  {
+    theme: "daily", cefr: "B1",
+    situation: "資深同事丟一個技術任務給你，但你完全聽不懂他的解釋。你不想看起來無能。",
+    options: [
+      { text: "OK, I'll figure it out.", correct: false, why: "假裝懂的代價：你會卡住、做錯方向、最後反而暴露你不懂。比一開始就問還慘。" },
+      { text: "Sorry, I don't get it.", correct: false, why: "太自我貶低。職場上少用 sorry 在這種場合，把詞換成「could you walk me through」就專業很多。" },
+      { text: "Could you walk me through this real quick? I want to make sure I'm building it the way you'd expect, not just guessing.", correct: true, why: "巧妙包裝：你問問題不是因為不懂，是因為要做對。用「the way you'd expect」把對方拉進來當合作夥伴而不是評審。" },
+      { text: "Can you write it down so I can read it?", correct: false, why: "把工作丟回去（要對方寫）。對方剛才已經講過一次了，再要他寫一次顯得太被動。" }
+    ]
+  },
+  {
+    theme: "daily", cefr: "B1",
+    situation: "你卡住了一個技術問題，需要找人幫忙，但對方很資深通常很忙。怎麼開口？",
+    options: [
+      { text: "Hey, I really need your help right now, this is urgent!", correct: false, why: "「really need」「right now」「urgent」三連發，會讓對方產生防備。除非真的著火，不然這種強度會被視為無法自理。" },
+      { text: "Hey, I'm a bit stuck on the database migration — could you take a look when you get a chance? No rush, but stuck enough that I don't want to keep guessing.", correct: true, why: "完美：(1) 「a bit stuck」不太嚴重 (2) 「when you get a chance」尊重對方時間 (3) 「stuck enough」誠實表達需要幫助 (4) 「don't want to keep guessing」展現你已經試過。對方會覺得你是合理求助而不是依賴。" },
+      { text: "Are you free?", correct: false, why: "太空泛。對方答 yes 後你還要再講一遍要幹嘛——浪費對方時間。一次講清楚需求。" },
+      { text: "Sorry to bother you but I have a problem.", correct: false, why: "「sorry to bother」太自我貶低、「I have a problem」太抽象。職場上問問題不需要先道歉，把問題具體化才是關鍵。" }
+    ]
+  },
+
+  // ============ MEETING ============
+  {
+    theme: "meeting", cefr: "B1",
+    situation: "視訊會議中，主管突然點名問你：「What's your take on this?」但你剛剛分心沒在聽。",
+    options: [
+      { text: "Sorry, I wasn't paying attention.", correct: false, why: "誠實但不必要的暴露。職場上絕對不要承認你沒在聽——只會打擊你的形象。" },
+      { text: "Could you give me a moment to gather my thoughts? I want to make sure I respond meaningfully.", correct: true, why: "高招緩衝。「gather my thoughts」聽起來是在認真思考，不是補課。「respond meaningfully」更暗示你重視這個議題。爭取到的時間裡你可以快速從聊天記錄／簡報抓回重點。" },
+      { text: "I agree with what's been said.", correct: false, why: "完全沒在聽的標準回答。但會被識破——後續一旦被追問你就完了。" },
+      { text: "Could you repeat the question?", correct: false, why: "OK 但不夠好——會讓人懷疑你沒在聽。前面那個答案更巧妙。" }
+    ]
+  },
+  {
+    theme: "meeting", cefr: "B2",
+    situation: "會議上有同事提出了一個你覺得會踩坑的方案，但全會議室的人都點頭附和。怎麼禮貌但堅定地反對？",
+    options: [
+      { text: "I disagree.", correct: false, why: "太直接。在英美職場文化下，這種裸的「I disagree」會讓場面尷尬。需要鋪陳。" },
+      { text: "I see the appeal of this approach, but I'd like to push back on a couple of points — specifically around timeline and downstream impact. Can I walk through those?", correct: true, why: "三層緩衝：(1) 先承認對方方案的優點（the appeal）(2) 「push back」是商務界禮貌的反對 (3) 給出具體理由（timeline / impact）而非感受 (4) 主動要求發言空間。讓對方不會覺得被攻擊。" },
+      { text: "Hmm, that might not work.", correct: false, why: "太弱、太模糊。沒講清楚為什麼，會被當成情緒性發言而不被認真考慮。" },
+      { text: "Have you actually thought this through?", correct: false, why: "極具攻擊性。直接質疑對方有沒有思考過——會讓對方產生防衛，整個會議走向就毀了。" }
+    ]
+  },
+  {
+    theme: "meeting", cefr: "B1",
+    situation: "你正開到一半的會議延長了，但你下一個會議馬上要開始。怎麼禮貌離開但不顯得不投入？",
+    options: [
+      { text: "I have to go.", correct: false, why: "太硬。沒有解釋、沒有禮貌——會讓人覺得你不重視這個會議。" },
+      { text: "Heads up — I have a hard stop at the top of the hour. Could we lock in the action items for this week before I drop off?", correct: true, why: "教科書回應：(1) 預告（不是突然消失）(2) 「hard stop」業界用語顯得專業 (3) 主動提議「lock in action items」展現你在意結論 (4) 「drop off」是離開會議的正確動詞。" },
+      { text: "Sorry I have another meeting, gotta go bye.", correct: false, why: "太隨便。沒有給時間整理結論、語氣口語過頭。" },
+      { text: "（直接登出視訊）", correct: false, why: "極失禮。職場視訊會議離開要先預告，不能像關 YouTube 一樣直接關掉。" }
+    ]
+  },
+  {
+    theme: "meeting", cefr: "B2",
+    situation: "客戶在會議中突然提出一個你做不到的要求（他想要的功能在合約之外），全公司同事都在線上等你回應。",
+    options: [
+      { text: "We can't do that.", correct: false, why: "太硬，且暴露你的無能。職場上不能直接說「不行」——要說明條件、留商量空間。" },
+      { text: "Sure, we can do that!", correct: false, why: "你剛剛承諾了一個你不一定做得到的事。回去你會被自家工程／法務罵爆。" },
+      { text: "That's an interesting request — let me think through what would be involved on our side. Could I get back to you with a clear answer by EOD tomorrow?", correct: true, why: "黃金應對：(1) 不立刻拒絕也不立刻答應 (2) 「let me think through」表示你會認真評估 (3) 給具體回覆時間（EOD tomorrow）展現負責 (4) 為自己爭取到時間跟內部團隊對齊。" },
+      { text: "That sounds out of scope but maybe.", correct: false, why: "「out of scope」+「maybe」=既不肯定又不否定，反而讓客戶不安。要嘛先確認、要嘛延後再回。" }
+    ]
+  },
+  {
+    theme: "meeting", cefr: "B1",
+    situation: "跨時區視訊會議，對方口音很重你聽不太懂，已經請他重複過一次，第二次還是聽不懂。",
+    options: [
+      { text: "Sorry, I still don't understand.", correct: false, why: "把責任丟給對方又一次，會讓對方覺得受挫。需要換策略。" },
+      { text: "Just to make sure I'm tracking — you're saying that [你聽到的版本]?", correct: true, why: "切換策略：不再要對方重複，而是「猜他講什麼」讓他確認。這樣就算你只聽懂 60%，也能透過確認補上其他 40%。比再問一次有效十倍。" },
+      { text: "（假裝聽懂，點頭微笑）", correct: false, why: "極危險。如果對方問你的看法，你就完了。誤聽指示去做更糟。" },
+      { text: "Could you type it in the chat?", correct: false, why: "OK 但有點命令對方。寧可先用上面的「猜+確認」策略，最後不行再退到打字。" }
+    ]
+  },
+
+  // ============ CROSS-TEAM ============
+  {
+    theme: "cross-team", cefr: "B1",
+    situation: "你需要工程部加一個小功能但他們已經明顯超載。怎麼提才有機會被排進去？",
+    options: [
+      { text: "Hey, can you add this feature? It's important.", correct: false, why: "「important」是空話——對工程部來說，所有部門都說自己重要。需要量化價值與時程彈性。" },
+      { text: "Hi team, I know you're slammed, so wanted to see if there's a way we could squeeze in [feature] in the next sprint or two. It would unlock [specific business value]. Open to scoping it down if needed — what would help?", correct: true, why: "高段位請求：(1) 承認對方狀況（you're slammed）(2) 提出彈性時程（next sprint or two）(3) 量化商業價值 (4) 主動表達願意 scope down (5) 開放問題請對方提供資訊。把對方當夥伴不是執行者。" },
+      { text: "When can you start on this?", correct: false, why: "預設對方一定會做。沒給對方拒絕的空間，會引起反感。" },
+      { text: "My boss says we need this by next week.", correct: false, why: "把責任推給主管的「死亡之吻」——對方會覺得你只是傳話的，且 push 別人時拿主管當盾牌。" }
+    ]
+  },
+  {
+    theme: "cross-team", cefr: "B2",
+    situation: "兩個部門對一個專案的 ownership 有爭議，你被夾在中間。怎麼處理？",
+    options: [
+      { text: "It's not my problem, talk to my boss.", correct: false, why: "推卸責任的標準 SOP，但會讓你失去信任資本。職涯長期傷害。" },
+      { text: "I want to make sure we're aligned before we move forward — could we get the relevant leads from both teams in a 30-min call to clarify ownership and scope? I can set it up.", correct: true, why: "Senior 級別操作：(1) 不選邊站 (2) 提議結構化解法（30-min call with leads）(3) 主動承擔組織者角色 (4) 焦點放在對齊（aligned）而非衝突（conflict）。展現你能在政治情境下保持中立並推進事情。" },
+      { text: "I think Team A is right.", correct: false, why: "選邊站 = 立刻得罪另一方。除非你有極強的證據，否則不要在跨部門爭議中表態。" },
+      { text: "Let's just split it 50/50.", correct: false, why: "看似公平的折衷，但通常會變成「兩邊都做不好」。Ownership 問題需要明確指派，不是對半分。" }
+    ]
+  },
+
+  // ============ MANAGING-UP ============
+  {
+    theme: "managing-up", cefr: "B2",
+    situation: "你一個重大失誤被抓包了——客戶寄錯文件那種。要怎麼跟主管報告才能傷害最小？",
+    options: [
+      { text: "（拖延，希望主管沒發現）", correct: false, why: "賭運氣。一旦主管自己發現或從別處聽到，責任會放大十倍——隱瞞比錯誤本身嚴重。" },
+      { text: "I screwed up so bad, I'm so sorry, I don't know what to do.", correct: false, why: "情緒爆發版本。讓主管要先安撫你的情緒才能處理問題，反而是負擔。商務道歉要冷靜。" },
+      { text: "Hi [Manager], wanted to flag a mistake I made: I sent the draft proposal to Client B instead of Client A this morning. I've already emailed Client B asking them to disregard and confirmed they did. Sending you the chain so you have full context. Going forward I'll add a recipient double-check to my pre-send list.", correct: true, why: "完美危機處理四件套：(1) 主動報告 (2) 具體事實 (3) 已採取的補救措施 (4) 預防再發生的具體機制（going forward）。展現 ownership 而非求情。" },
+      { text: "There was a small mix-up with an email.", correct: false, why: "用被動語態+模糊詞（small / mix-up）試圖淡化，反而顯得在閃躲。主管會懷疑事情比你說的嚴重。" }
+    ]
+  },
+  {
+    theme: "managing-up", cefr: "B2",
+    situation: "績效面談時，你想要求加薪。研究顯示你的薪水低於市場行情。怎麼開口？",
+    options: [
+      { text: "I want a raise.", correct: false, why: "太直接。沒鋪陳、沒理由——會被視為純粹要錢，主管會本能拒絕。" },
+      { text: "I love working here, but I really need more money.", correct: false, why: "「really need」聽起來像私人財務危機，不是專業價值。讓主管同情你不會讓他幫你加薪。" },
+      { text: "I've been thinking about my growth here, and based on the impact I've delivered this year — [3 specific examples] — and looking at market data for similar roles, I'd like to discuss adjusting my compensation. How should we approach this conversation?", correct: true, why: "教科書級別的提案：(1) 包裝成「成長」而不是「要錢」(2) 具體成果 (3) 市場數據 (4) 開放式問題請主管引導下一步。讓主管當你的助攻，不是對手。" },
+      { text: "If I don't get a raise, I might have to look elsewhere.", correct: false, why: "威脅牌是最後手段，不是開場牌。用太早會直接惹怒主管，且若你不真的離開，威信全失。" }
+    ]
+  },
+  {
+    theme: "managing-up", cefr: "B2",
+    situation: "主管在公開團隊會議上批評你交出去的工作。當下要怎麼回應才能保住面子又不顯得對立？",
+    options: [
+      { text: "Actually I think it's fine.", correct: false, why: "公開頂撞主管 = 政治自殺。即使你是對的，這個場合也不適合反駁。" },
+      { text: "I hear you — let me regroup and come back with revisions. Could we sync briefly afterwards so I can get aligned on what \"good\" looks like for the next version?", correct: true, why: "高段位防守：(1) 「I hear you」承接但不認錯 (2) 「regroup and come back」表現韌性 (3) 主動約後續單獨對話——把實質討論拉到 1:1，避免在公開場合糾纏 (4) 「what good looks like」是邀請主管把標準講清楚（如果他講不清楚，就是他的問題不是你的）。" },
+      { text: "Sorry, I'll fix it.", correct: false, why: "太順從。直接承認錯誤但沒爭取到澄清的機會——下次可能還會踩同樣的雷。" },
+      { text: "Why didn't you tell me this earlier?", correct: false, why: "公開反指責主管。即使你心裡有理，這個場合會讓你看起來無法接受 feedback。" }
+    ]
+  },
+
+  // ============ EMAIL ============
+  {
+    theme: "email", cefr: "B1",
+    situation: "客戶寄信來催進度，但你還沒做完。你還需要 3 天。怎麼回信最得體？",
+    options: [
+      { text: "I'm still working on it.", correct: false, why: "客戶要的是「什麼時候」不是「在做」。這種回覆等於沒回。" },
+      { text: "Sorry, will get to you soon.", correct: false, why: "「soon」極危險——對方會以為是當天，你以為是這週。沒給具體時程的承諾都是空話。" },
+      { text: "Thanks for following up — this is in progress. To get you a thorough version (rather than a rushed one), I'd need until Thursday EOD. Would that work, or do you need an interim draft sooner?", correct: true, why: "完美三件套：(1) 感謝（不是道歉）(2) 包裝延誤為品質考量（thorough vs rushed）(3) 給具體時程＋一個替代選項（interim draft）讓客戶選。把延期變成合作對話。" },
+      { text: "There were some delays on our end, sorry.", correct: false, why: "「on our end」+「sorry」=承認自己的問題但沒給解方。客戶要的是新的時程，不是道歉。" }
+    ]
+  },
+  {
+    theme: "email", cefr: "B2",
+    situation: "你的提案被資深 stakeholder 在 email 上回了一句「I don't think this is the right direction.」你不想放棄。",
+    options: [
+      { text: "But I think it's the right direction.", correct: false, why: "直接對撞。沒搞清楚對方反對的點，後面對話會很難進行。" },
+      { text: "Could you elaborate on what concerns you specifically? I'd like to understand the gaps and see if there's a version of this that addresses them — or if it's worth pursuing at all.", correct: true, why: "成熟回應：(1) 先求理解 (2) 表達願意調整 (3) 保留「或許該放棄」的選項——這顯示你不是死守自己的提案，而是真心找最好方案。" },
+      { text: "OK no problem, I'll drop it.", correct: false, why: "太快放棄。如果你真的相信這個提案，至少先了解疑慮再決定要不要繼續推。" },
+      { text: "Could we discuss this with [更高層的人]?", correct: false, why: "直接 escalate 是核選項。會讓對方覺得你在繞過他，雙方關係很難修復。" }
+    ]
+  },
+
+  // ============ GENERAL ============
+  {
+    theme: "general", cefr: "A2",
+    situation: "週五下午 5:50 主管 Slack 你：「Can you look into Q3 numbers tonight?」你不想加班。",
     options: [
       { text: "I'm off the clock, see you Monday.", correct: false, why: "太直白。下班就是下班沒錯，但這種講法在多數職場文化下會被視為不合作。" },
-      { text: "Sure, what time should I have it ready?", correct: false, why: "你已經默默接受加班了，且沒有設下任何邊界。下次主管會更自然地把你當隨傳隨到。" },
-      { text: "I'm wrapping up for the weekend — happy to dive in first thing Monday morning. Let me know if it's truly urgent and I'll find a way.", correct: true, why: "禮貌地表明你下班了，主動提出週一早上是第一順位（顯得合作），同時留一個「真的緊急再說」的後門——讓主管自己衡量是不是真的需要犧牲你的週末。" },
-      { text: "No.", correct: false, why: "誠實但會出事。除非你有極其堅實的理由（如已預先請假），否則太硬。" }
+      { text: "Sure, what time should I have it ready?", correct: false, why: "默默接受加班且沒設下任何邊界。下次主管會更自然把你當隨傳隨到。" },
+      { text: "I'm wrapping up for the weekend — happy to dive in first thing Monday morning. Let me know if it's truly urgent and I'll find a way.", correct: true, why: "禮貌表明你下班了，主動提出週一早上是第一順位（顯得合作），同時留一個「真的緊急再說」的後門——讓主管自己衡量是不是真的需要犧牲你的週末。" },
+      { text: "No.", correct: false, why: "誠實但會出事。除非你有極堅實的理由，否則太硬。" }
     ]
   },
   {
-    situation: "同事 Mike 在跨部門會議上，把一個你們團隊明明做完的事情，講成是他做的。你想當場澄清，但又不想顯得在搶功。",
+    theme: "general", cefr: "B1",
+    situation: "團隊會議上主管問了你一個你完全不知道答案的問題（你沒做功課）。",
     options: [
-      { text: "Actually, my team did all of that, not Mike.", correct: false, why: "事實正確，但語氣太對立，會讓場面尷尬，且讓你看起來在計較。" },
-      { text: "Just to add a bit of context — our team led the execution on that, and Mike's been a great partner in coordinating across functions. Happy to walk through the details if useful.", correct: true, why: "禮貌地把功勞拉回來、不否定 Mike 的貢獻、且提供進一步說明的開放式邀請——讓在場的人自己理解誰實際上做了多少。" },
-      { text: "（什麼都不說，會後跟主管抱怨）", correct: false, why: "短期看似安全，但功勞會永遠被搶走。背後抱怨也讓你顯得被動。" },
-      { text: "Mike, that's not really accurate.", correct: false, why: "公開打臉同事，會讓所有人都尷尬，也讓你看起來在內鬥。" }
-    ]
-  },
-  {
-    situation: "你寄了一封重要的信給客戶三天了，對方完全沒回。你需要催，但客戶是大戶，不能太強勢。",
-    options: [
-      { text: "Why haven't you responded yet?", correct: false, why: "完全沒禮貌。客戶會覺得你在質問。" },
-      { text: "Just bumping this up in case it got buried — happy to jump on a quick call if it's easier!", correct: true, why: "經典商務催信句。「got buried」給對方台階下（假裝是信被埋掉，不是他懶得回）；提供 call 是降低對方回信成本的選項。" },
-      { text: "Following up.", correct: false, why: "太短促，看起來在賭氣。商務信件需要至少一句完整的話。" },
-      { text: "I noticed you haven't responded to my previous email.", correct: false, why: "事實正確，但語氣帶質問感。讓對方有種被指控的感覺。" }
-    ]
-  },
-  {
-    situation: "主管臨時丟一個你做不到的死線：「Can you have the full report ready by tomorrow morning?」你知道辦不到，要怎麼推回去而不顯得在抱怨？",
-    options: [
-      { text: "Tomorrow's impossible.", correct: false, why: "太絕對。職場裡「impossible」這個詞很少用——不是因為事情真的可能，是因為這個詞會讓主管覺得你不合作。" },
-      { text: "I'll try my best!", correct: false, why: "最糟的選擇。你明明做不到，卻給對方錯誤期待。明天早上交不出來時，責任會在你。" },
-      { text: "I want to make sure I deliver something solid — to do that properly, I'd need until end of day tomorrow. If you need a partial draft by morning, I can get you the executive summary first. What works best?", correct: true, why: "三件事都做到了：(1) 表達你想做好的態度 (2) 給出實際做得到的時程 (3) 提供折衷方案讓主管選。把決策權還給主管，但你已經設好邊界。" },
-      { text: "I have other priorities right now.", correct: false, why: "聽起來像在踢皮球，且主管會覺得你不知道什麼是 priority（言下之意是這個就是 priority）。" }
-    ]
-  },
-  {
-    situation: "一個沒什麼意義的會議邀請丟到你信箱（45 分鐘、9 個與會者、議題模糊）。你不想去，但邀請人是別部門主管，不能直接拒。",
-    options: [
-      { text: "I won't make it.", correct: false, why: "太短，沒禮貌。也沒留下你願意參與的彈性。" },
-      { text: "Could you share what specific input you'd need from me? I might be able to send my thoughts in advance and free up the time on both ends — happy to join if there's something I should weigh in on live.", correct: true, why: "高招。沒有直接拒絕，反而把球踢回去問「你到底要我幹嘛」。多數時候對方根本說不出來，會回你「沒事你不用來」。" },
-      { text: "I have a conflict, sorry!", correct: false, why: "可以用，但這招用多了會被識破。且如果你之後在公司裡被看到沒事，會很尷尬。" },
-      { text: "This meeting could've been an email.", correct: false, why: "你心裡可以這樣想，但千萬別寫出來。" }
-    ]
-  },
-  {
-    situation: "你不小心寄錯了文件給客戶（敏感版本）。發現的當下要怎麼處理才能傷害最小？",
-    options: [
-      { text: "（裝作沒事，希望對方沒注意到）", correct: false, why: "賭運氣。一旦對方發現，損害會放大十倍——隱瞞比錯誤本身嚴重。" },
-      { text: "Apologies, I sent the wrong file by mistake. Please find the correct version attached. Could you kindly disregard and delete the previous one? Let me know if you have any questions.", correct: true, why: "三步驟標準流程：道歉、附正確檔、請對方刪除舊檔。用「kindly」軟化要求。最後一句留下溝通管道。乾淨、專業、不過度自責。" },
-      { text: "OMG I am SO sorry, I can't believe I did that, I'm such an idiot, please forgive me!!!", correct: false, why: "太誇張的道歉反而顯得不專業，會讓客戶懷疑你的可靠度。商業道歉要簡短有力。" },
-      { text: "There was an error in the previous email.", correct: false, why: "用被動語態（「there was an error」）試圖避責，反而看起來在閃躲。要主動承認是「I sent」。" }
-    ]
-  },
-  {
-    situation: "團隊會議上，主管問了你一個你完全不知道答案的問題（你沒做功課）。要怎麼回最不丟臉？",
-    options: [
-      { text: "I don't know.", correct: false, why: "誠實但太赤裸。沒有任何補救方案，會讓人覺得你準備不足。" },
-      { text: "Let me look into that and circle back with you by EOD.", correct: true, why: "經典脫身術：(1) 不假裝知道 (2) 設下明確的回覆時程（EOD = End of Day，今天下班前）(3) 表現出主動跟進的態度。重點是：說了 EOD 就一定要在 EOD 前回，不然信用破產。" },
-      { text: "（亂編一個答案）", correct: false, why: "極度危險。如果之後被發現你瞎掰，信用就毀了——而商業環境裡，信用比答案重要太多。" },
-      { text: "Why are you asking me?", correct: false, why: "顯然不行。看起來是在反擊主管。" }
-    ]
-  },
-  {
-    situation: "同事在 Slack 上私訊你抱怨另一個同事，希望你附和。你不想介入辦公室政治，但也不想得罪他。",
-    options: [
-      { text: "Yeah he's the worst.", correct: false, why: "看起來只是私訊。但這些對話可能截圖、可能轉傳。永遠不要寫下你不想被公開的東西。" },
-      { text: "Hmm, I get the frustration. Have you tried bringing it up with them directly? Sometimes that surfaces things you didn't expect.", correct: true, why: "三件事：(1) 同理對方情緒（不冷漠）(2) 不附和八卦 (3) 把球踢回去——建議他直接溝通。聽起來成熟、不介入、且給了實際建議。" },
-      { text: "I don't want to talk about this.", correct: false, why: "太硬。對方會覺得你在拒絕他。可以拒絕話題，但要更圓融。" },
-      { text: "（已讀不回）", correct: false, why: "短期沒事，但對方可能會記得你在他需要時消失了。需要更主動的回應。" }
-    ]
-  },
-  {
-    situation: "你交出去的工作被主管當場大改，你覺得改得不對，但不想當場吵架。",
-    options: [
-      { text: "I disagree.", correct: false, why: "太直接。不是不能 disagree，但需要用更專業的包裝。" },
-      { text: "Sure, whatever you think.", correct: false, why: "看似順從，但你心裡不服，下次還會出同樣問題。且讓主管覺得你沒有自己的判斷。" },
-      { text: "Help me understand the thinking behind this change — I want to make sure I apply the same logic next time. I had originally gone with [your version] because [reason], but happy to adjust if there's context I'm missing.", correct: true, why: "高段位回應：(1) 不對立，先問理由 (2) 表達學習意願 (3) 同時留下你原本的邏輯（讓對方知道你有思考）(4) 開放空間給對方說明，可能對方真的有你不知道的資訊。" },
-      { text: "Are you sure about this change?", correct: false, why: "太挑戰。這句話在英文職場聽起來很質疑對方判斷。" }
-    ]
-  },
-  {
-    situation: "Email 結尾，你想要禮貌但堅定地推進對方做決定（不要拖了），該怎麼寫？",
-    options: [
-      { text: "Please respond ASAP.", correct: false, why: "太強硬。ASAP 在商務信件中常被視為不耐煩。" },
-      { text: "Looking forward to your thoughts!", correct: false, why: "太被動。沒有時間錨點，對方可以無限拖延。" },
-      { text: "To keep the project on track, could you confirm your decision by Wednesday EOD? Happy to hop on a call if it'd help speed things up.", correct: true, why: "完美三件套：(1) 給拖延一個正當理由（「to keep the project on track」是團隊利益不是你的私心）(2) 設下明確的死線 (3) 提供 call 的選項減少對方阻力。" },
-      { text: "When can I expect a response?", correct: false, why: "可以用，但帶有問責感，且沒有給對方一個合作的框架。" }
-    ]
-  },
-  {
-    situation: "你想離職了，主管臨時找你 1:1，你不確定他知不知道。他開頭問：「How are things going?」你要怎麼回最安全？",
-    options: [
-      { text: "Honestly, I've been thinking about leaving.", correct: false, why: "太衝動。在你還沒準備好正式提離職前（且還沒準備好 offer），不要先把底牌打出來。" },
-      { text: "Pretty good! Just heads-down on the usual stuff — anything specific you wanted to talk about?", correct: true, why: "經典反問模板：(1) 中性正面回應 (2) 不主動透露任何資訊 (3) 把球踢回去問對方意圖——讓主管自己揭開這次會議的目的。在你資訊不對等時，先讓對方先說。" },
-      { text: "Things are okay I guess.", correct: false, why: "「okay I guess」這種模糊負面語會引起主管追問，反而把你逼到角落。" },
-      { text: "Why do you ask?", correct: false, why: "太防備。直接讓主管覺得你心裡有鬼。" }
-    ]
-  },
-  {
-    situation: "你的提案被打槍了。對方寫信說「I don't think this is the right direction.」你不想放棄，但也不能硬幹。",
-    options: [
-      { text: "Could you elaborate on what concerns you specifically? I'd like to understand the gaps and see if there's a version of this that addresses them — or if it's worth pursuing at all.", correct: true, why: "成熟的回應：(1) 先求理解（不防衛）(2) 表達你願意調整 (3) 但也保留「或者其實該放棄」的選項——這顯示你不是死守自己的提案，而是真心要找最好的方案。" },
-      { text: "But I think it's the right direction.", correct: false, why: "直接對撞。你還沒搞清楚對方反對的點，就先表達立場，後面對話會很難進行。" },
-      { text: "Ok no problem, I'll drop it.", correct: false, why: "太快放棄。如果你真的相信這個提案，至少先了解一下對方的疑慮再決定要不要繼續推。" },
-      { text: "Can we discuss this with [bigger boss]?", correct: false, why: "直接 escalate 是核選項。會讓對方覺得你在繞過他，雙方關係很難修復。" }
+      { text: "I don't know.", correct: false, why: "誠實但太赤裸。沒有補救方案，會讓人覺得你準備不足。" },
+      { text: "Let me look into that and circle back with you by EOD.", correct: true, why: "經典脫身術：(1) 不假裝知道 (2) 設下明確回覆時程（EOD = End of Day）(3) 表現主動跟進。重點是：說了 EOD 就要在 EOD 前回，不然信用破產。" },
+      { text: "（亂編一個答案）", correct: false, why: "極危險。如果之後被發現你瞎掰，信用就毀了——商業環境裡，信用比答案重要太多。" },
+      { text: "Why are you asking me?", correct: false, why: "顯然不行。看起來在反擊主管。" }
     ]
   }
 ];
@@ -1572,6 +2355,23 @@ let drillAnswered = false;
 let favorites = new Set();
 let score = { correct: 0, wrong: 0 };
 
+// theme filters per panel — null means "all"
+let phraseThemeFilter = null;
+let decoderThemeFilter = null;
+let drillThemeFilter = null;
+
+// filtered index lists for navigation
+let phraseFilteredIdx = []; // indexes into PHRASES
+let drillFilteredIdx = [];  // indexes into DRILLS
+
+// progress tracking
+let learnedPhrases = new Set();   // phrase.en strings that user marked as learned
+let attemptedDrills = new Set();  // drill index numbers
+let correctDrills = new Set();    // drill indexes answered correctly
+
+// learning plan tracking
+let planStartDate = null; // ISO date string when user pressed "set start date"
+
 /* ===================== STORAGE ===================== */
 
 async function storageGet(key, defaultValue) {
@@ -1604,12 +2404,24 @@ async function init() {
   const savedSpeed = await storageGet('speechRate', 0.9);
   Speech.setRate(savedSpeed);
 
+  // new persistent state
+  learnedPhrases = new Set(await storageGet('learnedPhrases', []));
+  attemptedDrills = new Set(await storageGet('attemptedDrills', []));
+  correctDrills = new Set(await storageGet('correctDrills', []));
+  planStartDate = await storageGet('planStartDate', null);
+
+  // initialize filtered indexes (no filter = all)
+  rebuildPhraseFilter();
+  rebuildDrillFilter();
+
   setupTabs();
   setupSpeechControls();
+  setupThemeFilters();
   setupDailyPhrase();
   setupDecoder();
   setupDrill();
   setupFavorites();
+  setupPlan();
   updateFavBadge();
   updateScoreDisplay();
   updateSpeedToggle(savedSpeed);
@@ -1633,13 +2445,14 @@ function setupHeader() {
 function setupTabs() {
   document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
-      Speech.stop(); // stop any ongoing playback when switching tab
+      Speech.stop();
       dialoguePlaying = false;
       document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
       tab.classList.add('active');
       document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
       if (tab.dataset.tab === 'fav') renderFavorites();
+      if (tab.dataset.tab === 'plan') renderPlan();
     });
   });
 }
@@ -1780,7 +2593,6 @@ function updateSpeedToggle(speed) {
 /* ===================== DAILY PHRASE ===================== */
 
 function setupDailyPhrase() {
-  document.getElementById('phraseTotal').textContent = PHRASES.length;
   renderPhrase();
   document.getElementById('btnNextPhrase').addEventListener('click', () => {
     Speech.stop();
@@ -1788,7 +2600,10 @@ function setupDailyPhrase() {
     const dlgBtn = document.getElementById('btnPlayDialogue');
     dlgBtn.classList.remove('playing');
     dlgBtn.textContent = '▶ 播整段對話';
-    currentPhraseIdx = (currentPhraseIdx + 1) % PHRASES.length;
+    // advance through filtered list
+    const pos = phraseFilteredIdx.indexOf(currentPhraseIdx);
+    const nextPos = (pos + 1) % phraseFilteredIdx.length;
+    currentPhraseIdx = phraseFilteredIdx[nextPos];
     renderPhrase();
   });
   document.getElementById('btnFav').addEventListener('click', toggleFavorite);
@@ -1796,11 +2611,16 @@ function setupDailyPhrase() {
 
 function renderPhrase() {
   const p = PHRASES[currentPhraseIdx];
+  if (!p) return;
+  renderTagRow('phraseTagRow', p);
   document.getElementById('phraseEn').textContent = p.en;
   document.getElementById('phraseZh').textContent = p.zh;
   document.getElementById('phraseContext').textContent = p.context;
   document.getElementById('phraseSubtext').textContent = p.subtext;
-  document.getElementById('phraseIndex').textContent = currentPhraseIdx + 1;
+  // index within filtered set
+  const posInFilter = phraseFilteredIdx.indexOf(currentPhraseIdx);
+  document.getElementById('phraseIndex').textContent = posInFilter >= 0 ? posInFilter + 1 : 1;
+  document.getElementById('phraseTotal').textContent = phraseFilteredIdx.length;
 
   const dlg = document.getElementById('phraseDialogue');
   dlg.innerHTML = p.dialogue.map(([s, t], i) => {
@@ -1864,17 +2684,24 @@ function updateFavBadge() {
 /* ===================== DECODER ===================== */
 
 function setupDecoder() {
-  renderDecoderList(DECODER);
+  applyDecoderFilters('');
   document.getElementById('decoderSearch').addEventListener('input', (e) => {
     const q = e.target.value.trim().toLowerCase();
-    if (!q) { renderDecoderList(DECODER); return; }
-    const filtered = DECODER.filter(d =>
+    applyDecoderFilters(q);
+  });
+}
+
+function applyDecoderFilters(q) {
+  let items = DECODER;
+  if (decoderThemeFilter) items = items.filter(d => d.theme === decoderThemeFilter);
+  if (q) {
+    items = items.filter(d =>
       d.said.toLowerCase().includes(q) ||
       d.saidZh.includes(q) ||
       d.meant.toLowerCase().includes(q)
     );
-    renderDecoderList(filtered);
-  });
+  }
+  renderDecoderList(items);
 }
 
 function renderDecoderList(items) {
@@ -1921,14 +2748,16 @@ function escapeHtml(s) {
 /* ===================== DRILL ===================== */
 
 function setupDrill() {
-  document.getElementById('drillTotal').textContent = DRILLS.length;
   renderDrill();
   document.getElementById('btnNextDrill').addEventListener('click', () => {
-    currentDrillIdx = (currentDrillIdx + 1) % DRILLS.length;
+    Speech.stop();
+    const pos = drillFilteredIdx.indexOf(currentDrillIdx);
+    const nextPos = (pos + 1) % drillFilteredIdx.length;
+    currentDrillIdx = drillFilteredIdx[nextPos];
     renderDrill();
   });
   document.getElementById('btnRestartDrill').addEventListener('click', () => {
-    currentDrillIdx = 0;
+    currentDrillIdx = drillFilteredIdx[0] ?? 0;
     renderDrill();
   });
   document.getElementById('btnResetScore').addEventListener('click', async () => {
@@ -1951,9 +2780,13 @@ function setupDrill() {
 
 function renderDrill() {
   const d = DRILLS[currentDrillIdx];
+  if (!d) return;
   drillAnswered = false;
 
-  document.getElementById('drillNum').textContent = currentDrillIdx + 1;
+  renderTagRow('drillTagRow', d);
+  const posInFilter = drillFilteredIdx.indexOf(currentDrillIdx);
+  document.getElementById('drillNum').textContent = posInFilter >= 0 ? posInFilter + 1 : 1;
+  document.getElementById('drillTotal').textContent = drillFilteredIdx.length;
   document.getElementById('drillSituation').textContent = d.situation;
 
   const optsBox = document.getElementById('drillOptions');
@@ -1987,10 +2820,16 @@ async function handleDrillAnswer(picked) {
   const correctOpt = d.options[correctIdx];
   const pickedOpt = d.options[picked];
 
+  // track attempt + correctness
+  attemptedDrills.add(currentDrillIdx);
+  await storageSet('attemptedDrills', [...attemptedDrills]);
+
   let explainHtml = '';
   if (picked === correctIdx) {
     explainHtml = `<strong style="color: var(--green);">答對了。</strong> ${escapeHtml(correctOpt.why)}`;
     score.correct++;
+    correctDrills.add(currentDrillIdx);
+    await storageSet('correctDrills', [...correctDrills]);
   } else {
     explainHtml = `<strong style="color: var(--stamp);">你選的：</strong> ${escapeHtml(pickedOpt.why)}<br><br><strong>較佳的回應是：</strong> <span class="gloss">「${escapeHtml(correctOpt.text)}」</span><br>${escapeHtml(correctOpt.why)}`;
     score.wrong++;
@@ -2072,6 +2911,160 @@ async function renderFavorites() {
       renderPhrase();
     });
   });
+}
+
+/* ===================== THEME FILTERS ===================== */
+
+function setupThemeFilters() {
+  const containers = [
+    { id: 'phraseThemeFilter', getCount: t => PHRASES.filter(p => !t || p.theme === t).length, onChange: t => { phraseThemeFilter = t; rebuildPhraseFilter(); currentPhraseIdx = phraseFilteredIdx[0] ?? 0; renderPhrase(); } },
+    { id: 'decoderThemeFilter', getCount: t => DECODER.filter(d => !t || d.theme === t).length, onChange: t => { decoderThemeFilter = t; const q = document.getElementById('decoderSearch').value.trim().toLowerCase(); applyDecoderFilters(q); } },
+    { id: 'drillThemeFilter', getCount: t => DRILLS.filter(d => !t || d.theme === t).length, onChange: t => { drillThemeFilter = t; rebuildDrillFilter(); currentDrillIdx = drillFilteredIdx[0] ?? 0; renderDrill(); } }
+  ];
+
+  containers.forEach(({ id, getCount, onChange }) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    let html = `<span class="filter-label">主題</span>`;
+    html += `<button class="filter-chip active" data-theme="">ALL <span class="count">${getCount(null)}</span></button>`;
+    Object.entries(THEMES).forEach(([key, info]) => {
+      const c = getCount(key);
+      if (c === 0) return;
+      html += `<button class="filter-chip" data-theme="${key}" style="color: ${info.color};">${escapeHtml(info.label)} <span class="count">${c}</span></button>`;
+    });
+    el.innerHTML = html;
+
+    el.querySelectorAll('.filter-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        el.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const t = btn.dataset.theme || null;
+        onChange(t);
+      });
+    });
+  });
+}
+
+function rebuildPhraseFilter() {
+  phraseFilteredIdx = PHRASES
+    .map((p, i) => phraseThemeFilter && p.theme !== phraseThemeFilter ? -1 : i)
+    .filter(i => i >= 0);
+  if (phraseFilteredIdx.length === 0) phraseFilteredIdx = PHRASES.map((_, i) => i);
+}
+
+function rebuildDrillFilter() {
+  drillFilteredIdx = DRILLS
+    .map((d, i) => drillThemeFilter && d.theme !== drillThemeFilter ? -1 : i)
+    .filter(i => i >= 0);
+  if (drillFilteredIdx.length === 0) drillFilteredIdx = DRILLS.map((_, i) => i);
+}
+
+function renderTagRow(containerId, item) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const t = THEMES[item.theme] || THEMES.general;
+  const cefrCls = (item.cefr || '').toLowerCase().replace('+', '');
+  let html = `<span class="theme-chip" style="color: ${t.color};">${escapeHtml(t.label)}</span>`;
+  if (item.cefr) html += `<span class="cefr-badge ${cefrCls}">${escapeHtml(item.cefr)}</span>`;
+  if (item.skill) html += `<span class="skill-badge">${escapeHtml(item.skill)}</span>`;
+  el.innerHTML = html;
+}
+
+/* ===================== PROGRESS / PLAN ===================== */
+
+function getCurrentWeek() {
+  if (!planStartDate) return 1;
+  const start = new Date(planStartDate);
+  const now = new Date();
+  const diffDays = Math.floor((now - start) / 86400000);
+  const week = Math.floor(diffDays / 7) + 1;
+  return Math.max(1, Math.min(week, PLAN.totalWeeks));
+}
+
+function getCurrentPhase() {
+  const w = getCurrentWeek();
+  return PLAN.phases.find(p => w >= p.start && w <= p.end) || PLAN.phases[0];
+}
+
+function setupPlan() {
+  document.getElementById('btnPlanStart').addEventListener('click', async () => {
+    const today = new Date().toISOString().slice(0, 10);
+    planStartDate = today;
+    await storageSet('planStartDate', planStartDate);
+    renderPlan();
+  });
+
+  document.getElementById('btnPlanReset').addEventListener('click', async () => {
+    if (!confirm('確定要重置進度嗎？已學會的句子記錄、答題紀錄、分數會全部清除（收藏不會被清除）。')) return;
+    planStartDate = null;
+    learnedPhrases = new Set();
+    attemptedDrills = new Set();
+    correctDrills = new Set();
+    score = { correct: 0, wrong: 0 };
+    await storageSet('planStartDate', null);
+    await storageSet('learnedPhrases', []);
+    await storageSet('attemptedDrills', []);
+    await storageSet('correctDrills', []);
+    await storageSet('score', score);
+    renderPlan();
+    updateScoreDisplay();
+  });
+}
+
+function renderPlan() {
+  const week = getCurrentWeek();
+  const phase = getCurrentPhase();
+
+  document.getElementById('planWeekNum').textContent = planStartDate ? week : '—';
+  document.getElementById('planPhaseName').textContent = planStartDate ? phase.name : '尚未開始';
+  document.getElementById('planPhaseMeta').textContent = planStartDate
+    ? `Phase ${phase.id} / 4 · 第 ${phase.start}-${phase.end} 週 · ${phase.cefrLabel}`
+    : '按下「設定起跑日」開始你的 26 週';
+  document.getElementById('planPhaseGoal').textContent = planStartDate ? phase.goal : '從今天起，每週 5-8 小時的固定練習，半年後達到 CEFR B2 / Linguaskill Business 達標。';
+  document.getElementById('planPhaseSkills').textContent = planStartDate ? phase.skills : '';
+
+  // phases grid
+  const phasesEl = document.getElementById('planPhases');
+  phasesEl.innerHTML = PLAN.phases.map(p => {
+    const isCurrent = planStartDate && week >= p.start && week <= p.end;
+    const isDone = planStartDate && week > p.end;
+    const cls = isCurrent ? 'current' : isDone ? 'done' : '';
+    const themesHtml = p.themes.map(t => {
+      const ti = THEMES[t] || THEMES.general;
+      return `<span class="theme-chip" style="color: ${ti.color};">${escapeHtml(ti.label)}</span>`;
+    }).join('');
+    return `
+      <div class="phase-card ${cls}">
+        <div class="phase-num">PHASE ${p.id} / 4</div>
+        <div class="phase-name">${escapeHtml(p.name)}</div>
+        <div class="phase-week-range">Week ${p.start} – ${p.end}</div>
+        <div class="phase-cefr">${escapeHtml(p.cefrLabel)}</div>
+        <div class="phase-themes">${themesHtml}</div>
+        <div class="phase-goal">${escapeHtml(p.goal)}</div>
+      </div>
+    `;
+  }).join('');
+
+  // theme progress
+  const progEl = document.getElementById('planProgress');
+  progEl.innerHTML = Object.entries(THEMES).map(([key, info]) => {
+    const phrasesInTheme = PHRASES.filter(p => p.theme === key);
+    const drillsInThemeIdx = [];
+    DRILLS.forEach((d, i) => { if (d.theme === key) drillsInThemeIdx.push(i); });
+    const learnedInTheme = phrasesInTheme.filter(p => learnedPhrases.has(p.en)).length;
+    const correctInTheme = drillsInThemeIdx.filter(i => correctDrills.has(i)).length;
+    const totalItems = phrasesInTheme.length + drillsInThemeIdx.length;
+    if (totalItems === 0) return '';
+    const doneItems = learnedInTheme + correctInTheme;
+    const pct = Math.round(100 * doneItems / totalItems);
+    return `
+      <div class="theme-progress-row">
+        <div class="theme-label" style="color: ${info.color};">${escapeHtml(info.label)}</div>
+        <div class="progress-bar"><div class="fill" style="width: ${pct}%; background: ${info.color};"></div></div>
+        <div class="progress-num">${doneItems} / ${totalItems}</div>
+      </div>
+    `;
+  }).join('');
 }
 
 init();
